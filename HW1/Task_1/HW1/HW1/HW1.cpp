@@ -2,12 +2,14 @@
 #include <iostream>
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     std::ifstream fin("in.txt");
     int size;
     int size2;
 
     if (!fin.is_open()) {
         std::cout << "Не удалось открыть фаил!" << std::endl;
+        return 0;
     }
     fin >> size; // чтение первого числа
 
@@ -33,6 +35,7 @@ int main() {
 
     if (!fout.is_open()) {
         std::cout << "Не удалось открыть фаил для записи!" << std::endl;
+        return 0;
     }
 
         fout << size2 << std::endl;
