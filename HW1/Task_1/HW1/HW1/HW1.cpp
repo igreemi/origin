@@ -9,7 +9,7 @@ int main() {
 
     if (!fin.is_open()) {
         std::cout << "Не удалось открыть фаил!" << std::endl;
-        return 0;
+        return 1;
     }
     fin >> size; // чтение первого числа
 
@@ -35,7 +35,7 @@ int main() {
 
     if (!fout.is_open()) {
         std::cout << "Не удалось открыть фаил для записи!" << std::endl;
-        return 0;
+        return 1;
     }
 
         fout << size2 << std::endl;
