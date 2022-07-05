@@ -9,9 +9,10 @@ struct check
 };
 
 
-void new_sum(check* s) // указатель
+void new_sum(check* s) 
 {
-    s->sum;
+    std::cout << "Введите новый баланс: ";
+    std::cin >> s->sum;
 
 }
 
@@ -32,10 +33,8 @@ int main(int argc, char** argv)
 
     std::cout << "Введите баланс: ";
     std::cin >> ch.sum;
-    new_sum(&ch);
 
-    std::cout << "Введите новый баланс: ";
-    std::cin >> ch.sum;
+    new_sum(&ch);
 
     std::cout << "Ваш счет: " << ch.acc_number << ", " << ch.first_name << ", " << ch.sum << ". " << std::endl;
 
