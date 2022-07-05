@@ -65,8 +65,9 @@ int main()
 			std::cin >> num2;
 			calc.num2 = num2;
 
-		} while (!calc.set_num1(calc.num2));
+		} while (!calc.set_num2(calc.num2));
 
+		std::cout << std::endl;
 		std::cout << "num1 + num2 = " << calc.add() << std::endl;
 		std::cout << "num1 * num2 = " << calc.multiply() << std::endl;
 		std::cout << "num2 - num1 = " << calc.subtract_1_2() << std::endl;
