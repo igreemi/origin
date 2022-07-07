@@ -24,10 +24,6 @@ public:
 		this->count = num;
 	}
 
-	Counter() {
-
-	}
-
 };
 
 

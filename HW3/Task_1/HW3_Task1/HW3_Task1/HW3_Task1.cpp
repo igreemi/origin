@@ -1,9 +1,10 @@
 ﻿#include <iostream>
 
 class Calculator {
-public:
+private:
 	double num1 = 0;
 	double num2 = 0;
+public:
 
 	double add() {
 		return num1 + num2;
@@ -28,7 +29,7 @@ public:
 			this->num1 = num1;
 			return true;
 		}
-		std::cout << "Неверный ввод!" << std::endl;
+
 		return false;
 	}
 	bool set_num2(double num2) {
@@ -36,7 +37,7 @@ public:
 			this->num2 = num2;
 			return true;
 		}
-		std::cout << "Неверный ввод!" << std::endl;
+
 		return false;
 	}
 };
@@ -55,17 +56,20 @@ int main()
 		do {
 			std::cout << "Введите num1: ";
 			std::cin >> num1;
-			calc.num1 = num1;
-
+			if (num1 == 0) {
+				std::cout << "Неверный ввод!" << std::endl;
+			}
 		} while (!calc.set_num1(num1));
 
 
 		do {
 			std::cout << "Введите num2: ";
 			std::cin >> num2;
-			calc.num2 = num2;
+			if (num2 == 0) {
+				std::cout << "Неверный ввод!" << std::endl;
+			}
 
-		} while (!calc.set_num2(calc.num2));
+		} while (!calc.set_num2(num2));
 
 		std::cout << std::endl;
 		std::cout << "num1 + num2 = " << calc.add() << std::endl;
