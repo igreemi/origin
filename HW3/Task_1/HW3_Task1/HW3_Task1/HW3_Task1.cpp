@@ -53,23 +53,27 @@ int main()
 	while (true) {
 		double num1 = 0;
 		double num2 = 0;
+		bool accepted = false;
 		do {
 			std::cout << "Введите num1: ";
 			std::cin >> num1;
-			if (num1 == 0) {
+			accepted = calc.set_num1(num1);
+			if (!accepted) {
 				std::cout << "Неверный ввод!" << std::endl;
 			}
-		} while (!calc.set_num1(num1));
+
+		} while (!accepted);
 
 
 		do {
 			std::cout << "Введите num2: ";
 			std::cin >> num2;
-			if (num2 == 0) {
+			accepted = calc.set_num2(num2);
+			if (!accepted) {
 				std::cout << "Неверный ввод!" << std::endl;
 			}
 
-		} while (!calc.set_num2(num2));
+		} while (!accepted);
 
 		std::cout << std::endl;
 		std::cout << "num1 + num2 = " << calc.add() << std::endl;
@@ -82,4 +86,4 @@ int main()
 
 	}
 	return 0;
-}
+ }
