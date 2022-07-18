@@ -12,21 +12,26 @@ public:
 
 	}
 
-	virtual void print_info() {
+	void print_info() {
 		std::cout << figure + ": " << std::endl;
-		check();
-		std::cout << "Колличество сторон: " << sides_sum << std::endl;
-	}
-
-	bool check() {
-		
-		if (sides_sum == 0)
-		{
+		if (check() == false) {
 			std::cout << "Правильная" << std::endl;
-			return false;
+
 		}
 		else {
 			std::cout << "Неправильная" << std::endl;
+
+		}
+		std::cout << "Колличество сторон: " << sides_sum << std::endl;
+	}
+
+	virtual bool check() {
+		
+		if (sides_sum == 0)
+		{
+			return false;
+		}
+		else {
 			return true;
 		}
 	}
@@ -52,28 +57,25 @@ public:
 
 	Triangle() {}
 
-	virtual void print_info()
+	 void print_info()
 	 {
-		std::cout << figure + ": " << std::endl;
-		check();
-		std::cout << "Колличество сторон: " << sides_sum << std::endl;
 		 
-		 
+		 Figure::print_info();
+
 		std::cout << "Стороны: a=" + std::to_string(a) + " " + "b=" + std::to_string(b) + " " + "c=" + std::to_string(c) << std::endl;
 
 		std::cout << "Углы: A=" + std::to_string(A) + " " + "B=" + std::to_string(B) + " " + "C=" + std::to_string(C) << std::endl;
 	}
 
 
-	virtual bool check() {
+	bool check() override{
 
 		if (A + B + C == 180)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
+
 			return true;
 		}
 	}
@@ -94,15 +96,13 @@ public:
 		this->sides_sum = 3;
 	}
 
-	bool check() override {
+	bool check() {
 
-		if ( C == 90)
+		if (Triangle::check() == false && C == 90)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -125,13 +125,11 @@ public:
 
 	bool check() override {
 
-		if (A == C && a == c)
+		if (Triangle::check() == false &&  A == C && a == c)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -155,13 +153,11 @@ public:
 
 	bool check() override {
 
-		if (A == B == C && a == b == c)
+		if (Triangle::check() == false &&  A == B && B == C && a == b && b == c)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -192,10 +188,7 @@ public:
 
 	virtual void print_info()
 	{
-		std::cout << figure + ": " << std::endl;
-		check();
-		std::cout << "Колличество сторон: " << sides_sum << std::endl;
-
+		Figure::print_info();
 
 		std::cout << "Стороны: a=" + std::to_string(a) + " " + "b=" + std::to_string(b) + " " + "c=" + std::to_string(c) + " " + "d=" + std::to_string(d) << std::endl;
 
@@ -206,11 +199,9 @@ public:
 
 		if (A + B + C + D == 360)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -234,13 +225,11 @@ public:
 
 	 bool check() override {
 
-		if (a == c && b == d && A == 90 && B == 90 && C == 90)
+		if (Quadrilateral::check() == false && a == c && b == d && A == 90 && B == 90 && C == 90)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -263,13 +252,11 @@ public:
 
 	bool check() override {
 
-		if (a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90)
+		if (Quadrilateral::check() == false &&  a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 	}
@@ -293,17 +280,14 @@ public:
 
 	bool check() override {
 
-			if (a == c && b == d && A == C && B == D)
+			if (Quadrilateral::check() == false &&  a == c && b == d && A == C && B == D)
 			{
-				std::cout << "Правильная" << std::endl;
 				return false;
 			}
 			else {
-				std::cout << "Неправильная" << std::endl;
 				return true;
 			}
 		}
-	}
 
 };
 
@@ -324,13 +308,11 @@ public:
 
 	bool check() override {
 
-		if (a == b && b == c && c == d && A == C && B == D)
+		if (Quadrilateral::check() == false &&  a == b && b == c && c == d && A == C && B == D)
 		{
-			std::cout << "Правильная" << std::endl;
 			return false;
 		}
 		else {
-			std::cout << "Неправильная" << std::endl;
 			return true;
 		}
 		
@@ -351,7 +333,7 @@ int main()
 	triangle.print_info();
 	std::cout << std::endl;
 
-	Right_Triangle right_triangle(10, 20, 30, 50, 60, 90);
+	Right_Triangle right_triangle(10, 20, 30, 50, 40, 90);
 	right_triangle.print_info();
 	std::cout << std::endl;
 
