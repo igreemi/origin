@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <windows.h>
 #include <string>
 
 #include "Figure.h"
@@ -9,7 +10,7 @@
 #include "Equilateral_Triangle.h"
 
 #include "Quadrilateral.h"
-#include "Rectangle.h"
+#include "Rectangl.h"
 #include "Square.h"
 #include "Parallelogram.h"
 #include "Rhombus.h"
@@ -25,6 +26,7 @@ void print_info(Figure* figure) {
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
 
 	Triangle triangle(60, 50, 70, 10, 20, 30);
 	Right_Triangle right_triangle(10, 20, 30, 40, 50);
@@ -45,7 +47,7 @@ int main()
 
 	//----------------------------------------
 	Quadrilateral quadrilateral(60, 50, 60, 50, 90, 90, 90, 90);
-	Rectangle rectangle(20, 40, 20, 40);
+	Rectangl rectangle(20, 40, 20, 40);
 	Square square(10, 10, 10, 10);
 	Parallelogram parallelogram(20, 30, 80, 100);
 	Rhombus rhombus(60, 120, 60);

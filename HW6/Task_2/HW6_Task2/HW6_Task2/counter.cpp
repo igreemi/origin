@@ -1,7 +1,5 @@
 #include "counter.h"
 
-int count = 0;
-
 	int Counter::plus() {
 		return count++;
 	}

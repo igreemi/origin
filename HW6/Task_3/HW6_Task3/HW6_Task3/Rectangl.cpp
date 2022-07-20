@@ -1,7 +1,7 @@
-#include "Rectangle.h"
+#include "Rectangl.h"
 
 
-	Rectangle::Rectangle(int a, int b, int c, int d) {
+	Rectangl::Rectangl(int a, int b, int c, int d) {
 		this->a = a;
 		this->b = b;
 		this->c = c;

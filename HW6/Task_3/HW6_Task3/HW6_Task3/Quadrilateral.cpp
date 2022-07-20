@@ -1,7 +1,5 @@
 #include "Quadrilateral.h"
 
-int d = 0, D = 0;
-
 Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
 		this->a = a;
 		this->b = b;

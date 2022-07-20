@@ -36,7 +36,7 @@
     <ClCompile Include="Quadrilateral.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
+    <ClCompile Include="Rectangl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Square.cpp">
@@ -68,7 +68,7 @@
     <ClInclude Include="Quadrilateral.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Rectangle.h">
+    <ClInclude Include="Rectangl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Square.h">
