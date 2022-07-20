@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-
+#include <string>
 class Figure {
 private:
 	int number_of_sides;
@@ -11,12 +11,12 @@ public:
 		figure_name = name;
 	}
 
-	void get_figure_name() {
-	std::cout << figure_name << ": ";
+	std::string get_figure_name() {
+	return figure_name;
 	}
 
-	void get_num_of_sides() {
-	std::cout << number_of_sides << std::endl;
+	std::string get_num_of_sides() {
+	return std::to_string(number_of_sides) ;
 	}
 
 };
@@ -44,16 +44,13 @@ int main()
 	std::cout << "Колличество сторон: " << std::endl;
 
 	Figure figure(0, "Фигура");
-	figure.get_figure_name();
-	figure.get_num_of_sides();
+	std::cout << figure.get_figure_name() << ": " << figure.get_num_of_sides() << std::endl;
 
 	Triangle triangle(3, "Треугольник");
-	triangle.get_figure_name();
-	triangle.get_num_of_sides();
+	std::cout << triangle.get_figure_name() << ": " << triangle.get_num_of_sides() << std::endl;
 
 	Quadrangle quadrangle(4, "Четырехугольник");
-	quadrangle.get_figure_name();
-	quadrangle.get_num_of_sides();
+	std::cout << quadrangle.get_figure_name() << ": " << quadrangle.get_num_of_sides() << std::endl;
 
 	return 0;
 }
