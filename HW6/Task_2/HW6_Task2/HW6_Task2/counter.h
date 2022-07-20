@@ -2,7 +2,7 @@
 
 class Counter {
 private:
-	int count = 0;
+	int count;
 public:
 	int plus();
 

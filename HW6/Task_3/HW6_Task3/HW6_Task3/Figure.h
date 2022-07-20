@@ -3,7 +3,7 @@
 class Figure {
 protected:
 	std::string figure;
-	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
+	int a, b, c, A, B, C;
 public:
 	Figure();
 
