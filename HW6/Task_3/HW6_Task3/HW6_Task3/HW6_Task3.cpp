@@ -19,8 +19,8 @@
 void print_info(Figure* figure) {
 
 	std::cout << figure->figure_name() << std::endl;
-	std::cout << "Стороны: " << figure->get_side() << std::endl;
-	std::cout << "Углы: " << figure->get_angle() << std::endl;
+	std::cout << "Sides: " << figure->get_side() << std::endl;
+	std::cout << "Angles: " << figure->get_angle() << std::endl;
 
 }
 int main()

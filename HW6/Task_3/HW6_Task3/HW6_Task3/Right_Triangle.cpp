@@ -7,6 +7,6 @@ Right_Triangle::Right_Triangle(int a, int b, int c, int A, int B) {
 		this->A = A;
 		this->B = B;
 		this->C = 90;
-		this->figure = "Прямоугольный треугольник";
+		this->figure = "Right Triangle";
 	}
 

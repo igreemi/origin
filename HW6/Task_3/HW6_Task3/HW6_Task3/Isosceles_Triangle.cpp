@@ -9,5 +9,5 @@
 		this->C = C;
 		this->a = 60;
 		this->b = 60;
-		this->figure = "Равнобедренный треугольник";
+		this->figure = "Isosceles Triangle ";
 	}

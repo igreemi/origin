@@ -11,5 +11,5 @@
 		this->C = 90;
 		this->D = 90;
 
-		this->figure = "Прямоугольник";
+		this->figure = "Rectangle";
 	}

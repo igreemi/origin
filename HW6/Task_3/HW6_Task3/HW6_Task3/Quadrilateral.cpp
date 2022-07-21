@@ -9,7 +9,7 @@ Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
 		this->B = B;
 		this->C = C;
 		this->D = D;
-		figure = "Четырехугольник";
+		figure = "Quadrilateral";
 
 	}
 

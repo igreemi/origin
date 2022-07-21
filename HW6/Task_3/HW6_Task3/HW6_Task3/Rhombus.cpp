@@ -10,5 +10,5 @@ Rhombus::Rhombus(int a, int A, int B) {
 		this->B = B;
 		this->C = A;
 		this->D = B;
-		this->figure = "Ромб";
+		this->figure = "Rhombus";
 	}

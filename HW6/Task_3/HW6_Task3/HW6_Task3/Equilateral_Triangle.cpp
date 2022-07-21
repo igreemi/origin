@@ -9,5 +9,5 @@ Equilateral_Triangle::Equilateral_Triangle(int a) {
 		this->A = 60;
 		this->B = 60;
 		this->C = 60;
-		this->figure = "Равносторонний треугольник";
+		this->figure = "Equilateral Triangle";
 	}

@@ -9,5 +9,5 @@ Parallelogram::Parallelogram(int a, int b, int A, int B) {
 		this->B = B;
 		this->C = A;
 		this->D = B;
-		this->figure = "ֿאנאככוכמדנאלל";
+		this->figure = "Parallelogram";
 	}
