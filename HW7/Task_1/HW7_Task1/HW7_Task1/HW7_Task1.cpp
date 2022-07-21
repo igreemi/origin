@@ -3,17 +3,22 @@
 
 #define MODE 1
 
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 
-#if MODE == 0
+#ifndef MODE
+#error "Определите MODE.";
+
+#elif MODE == 0
 
 	std::cout << "Работаю в режиме тренировки.";
 
 #elif MODE == 1
 
+	#define add( a, b) ((a) + (b))
 	std::cout << "Работаю в боевом режиме" << std::endl;
 
 	int a, b;
@@ -23,8 +28,6 @@ int main()
 
 	std::cout << "Введите число 1: ";
 	std::cin >> b;
-
-#include "add_func.h"
 
 	std::cout << "Результат сложения: " << add(a, b) << std::endl; 
 #else 
