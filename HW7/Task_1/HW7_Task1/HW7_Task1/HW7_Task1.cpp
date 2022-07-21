@@ -26,7 +26,7 @@ int main()
 	std::cout << "Введите число 1: ";
 	std::cin >> a;
 
-	std::cout << "Введите число 1: ";
+	std::cout << "Введите число 2: ";
 	std::cin >> b;
 
 	std::cout << "Результат сложения: " << add(a, b) << std::endl; 
