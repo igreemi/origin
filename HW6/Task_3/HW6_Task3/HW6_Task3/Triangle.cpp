@@ -1,4 +1,5 @@
 #include "Triangle.h"
+#include <iostream>
 
 Triangle::Triangle(int a, int b, int c, int A, int B, int C) {
 		this->a = a;
@@ -7,7 +8,7 @@ Triangle::Triangle(int a, int b, int c, int A, int B, int C) {
 		this->A = A;
 		this->B = B;
 		this->C = C;
-		this->figure = "Треугольник1";
+		this->figure = "Треугольник";
 
 	}
 
