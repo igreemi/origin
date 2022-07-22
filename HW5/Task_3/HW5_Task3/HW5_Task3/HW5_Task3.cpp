@@ -5,14 +5,14 @@ class Figure {
 protected:
 	std::string figure = "Фигура";
 	int sides_sum = 0;
-	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
+//	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
 	bool check_check = false;
 public:
 	Figure() {
 
 	}
 
-	void print_info() {
+	virtual void print_info() {
 		std::cout << figure + ": " << std::endl;
 		if (check() == false) {
 			std::cout << "Правильная" << std::endl;
@@ -22,7 +22,7 @@ public:
 			std::cout << "Неправильная" << std::endl;
 
 		}
-		std::cout << "Колличество сторон: " << sides_sum << std::endl;
+		std::cout << "Количество сторон: " << sides_sum << std::endl;
 	}
 
 	virtual bool check() {
@@ -41,7 +41,8 @@ public:
 //---------------------------------------------------------------------------------
 
 class Triangle : public Figure {
-
+protected:
+	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
 public:
 
 	Triangle(int a, int b, int c, int A, int B, int C) {
@@ -57,7 +58,7 @@ public:
 
 	Triangle() {}
 
-	 void print_info()
+	 virtual void print_info() override
 	 {
 		 
 		 Figure::print_info();
@@ -168,7 +169,7 @@ public:
 
 class Quadrilateral : public Figure {
 protected:
-	int d = 0, D = 0;
+	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0, d = 0, D = 0;
 public:
 
 	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
@@ -187,7 +188,7 @@ public:
 	Quadrilateral() {
 	}
 
-	virtual void print_info()
+	virtual void print_info() override
 	{
 		Figure::print_info();
 

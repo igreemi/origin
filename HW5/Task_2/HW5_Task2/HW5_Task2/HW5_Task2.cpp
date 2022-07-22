@@ -4,7 +4,7 @@
 class Figure {
 protected:
 	std::string figure;
-	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
+	
 public:
 	Figure() {
 
@@ -26,7 +26,8 @@ public:
 
 //--------------------------------Triangle---------------------------
 class Triangle: public Figure {
-
+protected:
+	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
 public:
 
 	Triangle(int a, int b, int c, int A, int B, int C) {
@@ -103,7 +104,7 @@ public:
 
 class Quadrilateral : public Figure {
 protected:
-	int d = 0, D = 0;
+	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0, d = 0, D = 0;
 public:
 
 	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
@@ -239,8 +240,6 @@ int main()
 
 	print_info(&rhombus);
 	std::cout << std::endl;
-
-
 
 	return 0;
 }

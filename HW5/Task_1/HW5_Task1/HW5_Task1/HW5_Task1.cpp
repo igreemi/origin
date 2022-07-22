@@ -15,8 +15,8 @@ public:
 	return figure_name;
 	}
 
-	std::string get_num_of_sides() {
-	return std::to_string(number_of_sides) ;
+	int get_num_of_sides() {
+	return number_of_sides;
 	}
 
 };

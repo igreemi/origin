@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HW5_Task3.cpp" />
+    <ClCompile Include="xbsdhsnsdns.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xbsdhsnsdns.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
