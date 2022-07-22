@@ -3,22 +3,23 @@
 
 #define MODE 1
 
+#ifndef MODE
+#error "Определите MODE.";
+#endif
+
+#if MODE == 1
+
+int add(int a, int b) { return (a + b); }
+
+#endif
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 
-#ifndef MODE
-#error "Определите MODE.";
+#if MODE == 1
 
-#elif MODE == 0
-
-	std::cout << "Работаю в режиме тренировки.";
-
-#elif MODE == 1
-
-	#define add( a, b) ((a) + (b))
 	std::cout << "Работаю в боевом режиме" << std::endl;
 
 	int a, b;
@@ -29,12 +30,19 @@ int main()
 	std::cout << "Введите число 2: ";
 	std::cin >> b;
 
-	std::cout << "Результат сложения: " << add(a, b) << std::endl; 
+	std::cout << "Результат сложения: " << add(a, b) << std::endl;
+
+#elif MODE == 0
+
+	std::cout << "Работаю в режиме тренировки.";
+
+
 #else 
 
 	std::cout << "Не известный режим. Завершаем работу.";
 	return 1;
-#endif
 
+#endif
+	
 	return 0;
 }
