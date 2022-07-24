@@ -5,7 +5,7 @@ class Figure {
 protected:
 	std::string figure = "Фигура";
 	int sides_sum = 0;
-//	int a = 0, b = 0, c = 0, A = 0, B = 0, C = 0;
+
 	bool check_check = false;
 public:
 	Figure() {
@@ -58,7 +58,7 @@ public:
 
 	Triangle() {}
 
-	 virtual void print_info() override
+	 void print_info() override
 	 {
 		 
 		 Figure::print_info();
@@ -69,7 +69,7 @@ public:
 	}
 
 
-	bool check() override{
+	 virtual bool check() override {
 
 		if (A + B + C == 180)
 		{
@@ -97,7 +97,7 @@ public:
 		this->sides_sum = 3;
 	}
 
-	bool check() {
+	bool check() override {
 
 		if (Triangle::check() == false && C == 90)
 		{
@@ -188,7 +188,7 @@ public:
 	Quadrilateral() {
 	}
 
-	virtual void print_info() override
+	void print_info() override
 	{
 		Figure::print_info();
 
@@ -197,7 +197,7 @@ public:
 		std::cout << "Углы: A=" + std::to_string(A) + " " + "B=" + std::to_string(B) + " " + "C=" + std::to_string(C) + " " + "D=" + std::to_string(D) << std::endl;
 	}
 
-	virtual bool check() {
+	virtual bool check() override {
 
 		if (A + B + C + D == 360)
 		{
@@ -322,51 +322,59 @@ public:
 
 };
 
+void print(Figure* figure) {
+
+	figure->print_info();
+
+}
+
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
 	Figure figure;
-	figure.print_info();
+
+	print(&figure);
 	std::cout << std::endl;
 
 	Triangle triangle(10, 50, 70, 60, 60, 60);
-	triangle.print_info();
-	std::cout << std::endl;
-
 	Right_Triangle right_triangle(10, 20, 30, 60, 40, 80);
-	right_triangle.print_info();
-	std::cout << std::endl;
-
 	Isosceles_Triangle iso_triangle(10, 20, 10, 50, 60, 50);
-	iso_triangle.print_info();
+	Equilateral_Triangle eq_triangle(30, 30, 30, 60, 60, 60);
+
+	print(&triangle);
 	std::cout << std::endl;
 
-	Equilateral_Triangle eq_triangle(30, 30, 30, 60, 60, 60);
-	eq_triangle.print_info();
+	print(&right_triangle);
 	std::cout << std::endl;
+
+	print(&iso_triangle);
+	std::cout << std::endl;
+
+	print(&eq_triangle);
+	std::cout << std::endl;
+
 	//---------------------------------------------------------
 
 	Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80);
-	quad.print_info();
-	std::cout << std::endl;
-
 	Rectangle rect(10, 20, 10, 20, 90, 90, 90, 90);
-	rect.print_info();
-	std::cout << std::endl;
-
 	Square square(20, 20, 20, 20, 90, 90, 90, 90);
-	square.print_info();
-	std::cout << std::endl;
-
 	Parallelogram parall(20, 30, 20, 30, 30, 40, 30, 40);
-	parall.print_info();
-	std::cout << std::endl;
-
 	Rhombus rhomb(30, 30, 30, 30, 30, 40, 30, 40);
-	rhomb.print_info();
+
+	print(&quad);
 	std::cout << std::endl;
 
+	print(&rect);
+	std::cout << std::endl;
 
+	print(&square);
+	std::cout << std::endl;
+
+	print(&parall);
+	std::cout << std::endl;
+
+	print(&rhomb);
+	std::cout << std::endl;
 }
