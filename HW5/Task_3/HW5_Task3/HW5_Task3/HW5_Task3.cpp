@@ -26,7 +26,7 @@ public:
 	}
 
 	virtual bool check() {
-		
+
 		if (sides_sum == 0)
 		{
 			return false;
@@ -58,10 +58,10 @@ public:
 
 	Triangle() {}
 
-	 void print_info() override
-	 {
-		 
-		 Figure::print_info();
+	void print_info() override
+	{
+
+		Figure::print_info();
 
 		std::cout << "Стороны: a=" + std::to_string(a) + " " + "b=" + std::to_string(b) + " " + "c=" + std::to_string(c) << std::endl;
 
@@ -69,7 +69,7 @@ public:
 	}
 
 
-	 virtual bool check() override {
+	virtual bool check() override {
 
 		if (A + B + C == 180)
 		{
@@ -126,7 +126,7 @@ public:
 
 	bool check() override {
 
-		if (Triangle::check() == false &&  A == C && a == c)
+		if (Triangle::check() == false && A == C && a == c)
 		{
 			return false;
 		}
@@ -154,7 +154,7 @@ public:
 
 	bool check() override {
 
-		if (Triangle::check() == false &&  A == B && B == C && a == b && b == c)
+		if (Triangle::check() == false && A == B && B == C && a == b && b == c)
 		{
 			return false;
 		}
@@ -225,7 +225,7 @@ public:
 		this->sides_sum = 4;
 	}
 
-	 bool check() override {
+	bool check() override {
 
 		if (Quadrilateral::check() == false && a == c && b == d && A == 90 && B == 90 && C == 90)
 		{
@@ -254,7 +254,7 @@ public:
 
 	bool check() override {
 
-		if (Quadrilateral::check() == false &&  a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90)
+		if (Quadrilateral::check() == false && a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90)
 		{
 			return false;
 		}
@@ -282,14 +282,14 @@ public:
 
 	bool check() override {
 
-			if (Quadrilateral::check() == false &&  a == c && b == d && A == C && B == D)
-			{
-				return false;
-			}
-			else {
-				return true;
-			}
+		if (Quadrilateral::check() == false && a == c && b == d && A == C && B == D)
+		{
+			return false;
 		}
+		else {
+			return true;
+		}
+	}
 
 };
 
@@ -310,14 +310,14 @@ public:
 
 	bool check() override {
 
-		if (Quadrilateral::check() == false &&  a == b && b == c && c == d && A == C && B == D)
+		if (Quadrilateral::check() == false && a == b && b == c && c == d && A == C && B == D)
 		{
 			return false;
 		}
 		else {
 			return true;
 		}
-		
+
 	}
 
 };
