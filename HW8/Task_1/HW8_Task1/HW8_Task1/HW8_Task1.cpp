@@ -3,8 +3,10 @@
 #include <windows.h>
 int function(std::string str, int forbidden_length) {
 
-    if (str.length() == forbidden_length)
-        throw "Вы ввели слово запретной длины! До свидания";
+    if (str.length() == forbidden_length) {
+        throw std::length_error( "Вы ввели слово ( " + str + " ) запретной длины ( " + std::to_string(forbidden_length) + " )! До свидания!");
+
+    }
         return str.length();
 
 }
@@ -29,9 +31,10 @@ int main()
          std::cout << "Длина слова \"" << str << "\" равна " << func_len << std::endl;
      } while (func_len != forbidden_length);
     }
-    catch (const char* msg)
+    catch (std::length_error ex)
     {
-        std::cout << msg << std::endl;
+        std::cout << ex.what() << std::endl;
+        
     }
 
     return 0;

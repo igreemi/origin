@@ -1,6 +1,4 @@
 ﻿#include <iostream>
-#include <windows.h>
-#include <string>
 
 #include "FigureEx.h"
 
@@ -27,7 +25,7 @@ void print_info(Figure* figure) {
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	SetConsoleCP(1251);
+
 	try {
 		Figure figure(0, 0, 0, 0, 0, 0, 0);
 
