@@ -1,10 +1,12 @@
 ﻿#include <iostream>
 #include <string>
 #include <windows.h>
+#include "bad_length.h"
+
 int function(std::string str, int forbidden_length) {
 
     if (str.length() == forbidden_length) {
-        throw std::length_error( "Вы ввели слово ( " + str + " ) запретной длины ( " + std::to_string(forbidden_length) + " )! До свидания!");
+        throw bad_length( "Вы ввели слово ( " + str + " ) запретной длины ( " + std::to_string(forbidden_length) + " )! До свидания!");
 
     }
         return str.length();
@@ -23,15 +25,15 @@ int main()
 
  try {
      do {
+
          std::cout << "Введите слово: ";
          std::cin >> str;
-
          func_len = function(str, forbidden_length);
-
          std::cout << "Длина слова \"" << str << "\" равна " << func_len << std::endl;
+
      } while (func_len != forbidden_length);
     }
-    catch (std::length_error ex)
+    catch (bad_length ex)
     {
         std::cout << ex.what() << std::endl;
         
