@@ -33,7 +33,7 @@ int main()
 
      } while (func_len != forbidden_length);
     }
-    catch (bad_length ex)
+    catch (const bad_length& ex)
     {
         std::cout << ex.what() << std::endl;
         

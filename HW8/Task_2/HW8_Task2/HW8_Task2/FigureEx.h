@@ -1,11 +1,14 @@
 #pragma once
-#include <iostream>
-class FigureEx:
+
+#include <stdexcept>
+#include <string>
+
+class FigureEx :
 	public std::domain_error
 {
 
 public:
-	FigureEx(const std::string &msg);
+	FigureEx(const std::string& msg);
 
 };
 
