@@ -8,7 +8,7 @@ private:
 	int denominator_;
 
 public:
-	//Fraction(){}
+
 	Fraction(int numerator, int denominator)
 	{
 		numerator_ = numerator;
@@ -21,44 +21,45 @@ public:
 	Fraction operator+(const Fraction& other)
 	{
 
-		numerator_ = (numerator_ * other.denominator_) +
-			(other.numerator_ * denominator_);
-		denominator_ = denominator_ * other.denominator_;
-		Reduction(numerator_, denominator_);
-		return Fraction(numerator_, denominator_);
+		int num = numerator_ * other.denominator_ +
+			other.numerator_ * denominator_;
+		int den = denominator_ * other.denominator_;
+		Reduction(num, den);
+		return Fraction(num, den);
 
 	}
 	Fraction operator-(const Fraction& other)
 	{
-		numerator_ = (numerator_ * other.denominator_) -
-			(other.numerator_ * denominator_);
-		denominator_ = denominator_ * other.denominator_;
-		Reduction(numerator_, denominator_);
-		return Fraction(numerator_, denominator_);
+
+		int num = numerator_ * other.denominator_ -
+			other.numerator_ * denominator_;
+		int den = denominator_ * other.denominator_;
+		Reduction(num, den);
+		return Fraction(num, den);
 
 	}
 
 	Fraction operator*(const Fraction& other)
 	{
 
-		numerator_ = numerator_ * other.numerator_;
-		denominator_ = denominator_ * other.denominator_;
-		Reduction(numerator_, denominator_);
-		return Fraction(numerator_, denominator_);
+		int num = numerator_ * other.numerator_;
+		int den = denominator_ * other.denominator_;
+		Reduction(num, den);
+		return Fraction(num, den);
 
 	}
 
 	Fraction operator/(const Fraction& other)
 	{
 
-		numerator_ = numerator_ * other.denominator_;
-		denominator_ = denominator_ * other.numerator_;
-		Reduction(numerator_, denominator_);
-		return Fraction(numerator_, denominator_);
+		int num = numerator_ * other.denominator_;
+		int den = denominator_ * other.numerator_;
+		Reduction(num, den);
+		return Fraction(num, den);
 
 	}
 
-	Fraction& operator++()
+	Fraction operator++()
 	{
 		numerator_++;
 		denominator_++;
@@ -73,12 +74,12 @@ public:
 
 	}
 
-	Fraction& operator--()
+	Fraction operator--()
 	{
 		numerator_--;
 		denominator_--;
 
-		return *this;
+		return Fraction(numerator_, denominator_);
 	}
 	Fraction operator--(int) {
 
@@ -98,17 +99,19 @@ public:
 		}
 	}
 
-	void Reduction(int num, int den) {
+	int Reduction(int num, int den) {
 		int x = gcd(num, den);
 		if (x < 0) {
 			x = x * -1;
 		}
 		if (x != 0) {
-			numerator_ = num / x;
-			denominator_ = den / x;
-		}
 
+			num = num / x;
+			den = den / x;
+		}
+		return num, den;
 	}
+
 
 	void Print() { std::cout << numerator_ << "/" << denominator_ << "\n"; }
 };

@@ -1,0 +1,16 @@
+# ninja log v5
+3	366	6821116487559303	build.ninja	5cd375c5bd128810
+1	2270	6821106028646854	CMakeFiles/figure.dir/HW6_Task3/HW6_Task3.cpp.obj	18127345e522e83
+45	1696	6821116544151123	CMakeFiles/figure.dir/HW6_Task3/Quadrilateral.cpp.obj	fb75c8ca71d15cc5
+84	1700	6821116543994801	CMakeFiles/figure.dir/HW6_Task3/Rhombus.cpp.obj	8963af0a3eb12135
+18	1732	6821116543994801	CMakeFiles/figure.dir/HW6_Task3/Isosceles_Triangle.cpp.obj	61cdc59e28762512
+26	1736	6821116544307474	CMakeFiles/figure.dir/HW6_Task3/Parallelogram.cpp.obj	26814a38cca2c55c
+75	1740	6821116544307474	CMakeFiles/figure.dir/HW6_Task3/Square.cpp.obj	a97f06a15b7711f6
+1	1743	6821116544151123	CMakeFiles/figure.dir/HW6_Task3/Figure.cpp.obj	5181460ce750ebbb
+10	1746	6821116544463729	CMakeFiles/figure.dir/HW6_Task3/Right_Triangle.cpp.obj	5e074feb3830a39b
+64	1750	6821116544463729	CMakeFiles/figure.dir/HW6_Task3/Rectangl.cpp.obj	b351457158f99b55
+54	1753	6821116544463729	CMakeFiles/figure.dir/HW6_Task3/Equilateral_Triangle.cpp.obj	94bfe288f356d92d
+35	1756	6821116544151123	CMakeFiles/figure.dir/HW6_Task3/Triangle.cpp.obj	95c917f7363041fd
+1757	2599	6821116552836118	figure.exe	a3c95f5f9a383e2c
+1	1734	6821120013312559	CMakeFiles/figure.dir/HW6_Task3/HW6_Task3.cpp.obj	18127345e522e83
+1735	2398	6821120018782765	figure.exe	a3c95f5f9a383e2c
