@@ -16,6 +16,7 @@ public:
 		if (denominator == 0) {
 			throw " Denominator cannot be 0 ";
 		}
+		
 	}
 
 
@@ -69,41 +70,38 @@ public:
 	Fraction operator++()
 	{
 
-		Fraction f;
-		f.numerator_ = ++numerator_;
-		f.denominator_ = ++denominator_;
+		Fraction f = *this;
+		f.numerator_++;
+		f.denominator_++;
 
 		return f;
-	
 
 	}
 	Fraction operator++(int) {
 
-		Fraction f;
-		f.numerator_ = numerator_++;
-		f.denominator_ = denominator_++;
+		Fraction f = *this;
+		++(*this);
 
 		return f;
-		
+
 	}
 
 	Fraction operator--()
 	{
-		Fraction f;
-		f.numerator_ = --numerator_;
-		f.denominator_ = --denominator_;
+		Fraction f = *this;
+		f.numerator_--;
+		f.denominator_--;
 
 		return f;
-		
+
 	}
 	Fraction operator--(int) {
 
-		Fraction f;
-		f.numerator_ = numerator_--;
-		f.denominator_ = denominator_--;
+		Fraction f = *this;
+		--(*this);
 
 		return f;
-		
+
 	}
 
 	int gcd(int num, int den) {
@@ -142,51 +140,56 @@ int main()
 {
 
 	setlocale(LC_ALL, "Russian");
-	int num1 = 3, num2 = 4;
-	int denom1 = 4, denom2 = 5;
-	/*
+	try {
+		int num1, num2;
+		int denom1, denom2;
+
 		std::cout << "Введите числитель дроби 1: ";
-		//	std::cin >> num1;
+		std::cin >> num1;
 
 		std::cout << "Введите знаменатель дроби 1: ";
-		//	std::cin >> denom1;
+		std::cin >> denom1;
 
 		std::cout << "Введите числитель дроби 2: ";
-		//	std::cin >> num2;
+		std::cin >> num2;
 
 		std::cout << "Введите знаменатель дроби 2: ";
-		//	std::cin >> denom2;
+		std::cin >> denom2;
 		std::cout << std::endl;
-	*/
-	Fraction f1(num1, denom1);
-	Fraction f2(num2, denom2);
 
-	Fraction sum = f1 + f2;
-	std::cout << f1.Print() << " + " << f2.Print() << " = " << sum.Print() << std::endl;
+		Fraction f1(num1, denom1);
+		Fraction f2(num2, denom2);
 
-	Fraction sub = f1 - f2;
-	std::cout << f1.Print() << " - " << f2.Print() << " = " << sub.Print() << std::endl;
+		Fraction sum = f1 + f2;
+		std::cout << f1.Print() << " + " << f2.Print() << " = " << sum.Print() << std::endl;
 
-	Fraction mult = f1 * f2;
-	std::cout << f1.Print() << " * " << f2.Print() << " = " << mult.Print() << std::endl;
+		Fraction sub = f1 - f2;
+		std::cout << f1.Print() << " - " << f2.Print() << " = " << sub.Print() << std::endl;
 
-	Fraction div = f1 / f2;
-	std::cout << f1.Print() << " / " << f2.Print() << " = " << div.Print() << std::endl;
+		Fraction mult = f1 * f2;
+		std::cout << f1.Print() << " * " << f2.Print() << " = " << mult.Print() << std::endl;
 
-	Fraction incPre = ++f1 * f2;
-	
-	std::cout << "++" << f1.Print() << " * " << f2.Print() << " = " << incPre.Print() << std::endl;
+		Fraction div = f1 / f2;
+		std::cout << f1.Print() << " / " << f2.Print() << " = " << div.Print() << std::endl;
+		std::cout << std::endl;
 
-	Fraction incPos = f1++ * f2;
-	
-	std::cout << f1.Print() << "++" << " * " << f2.Print() << " = " << incPos.Print() << std::endl;
+		Fraction incPre = ++f1 * f2;
 
-	Fraction decPre = --f1 * f2;
-	std::cout << "--" << f1.Print() << " * " << f2.Print() << " = " << decPre.Print() << std::endl;
+		std::cout << "++" << f1.Print() << " * " << f2.Print() << " = " << incPre.Print() << std::endl;
 
-	Fraction decPos = f1-- * f2;
-	std::cout << f1.Print() << "--" << " * " << f2.Print() << " = " << decPos.Print() << std::endl;
+		Fraction incPos = f1++ * f2;
 
+		std::cout << f1.Print() << "++" << " * " << f2.Print() << " = " << incPos.Print() << std::endl;
+
+		Fraction decPre = --f1 * f2;
+		std::cout << "--" << f1.Print() << " * " << f2.Print() << " = " << decPre.Print() << std::endl;
+
+		Fraction decPos = f1-- * f2;
+		std::cout << f1.Print() << "--" << " * " << f2.Print() << " = " << decPos.Print() << std::endl;
+	}
+	catch (const std::invalid_argument& msg) {
+		std::cout << msg.what() << std::endl;
+	}
 	return 0;
 }
 
