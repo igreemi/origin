@@ -18,75 +18,92 @@ public:
 		}
 	}
 
+
+	Fraction() {}
+
 	Fraction operator+(const Fraction& other)
 	{
+		Fraction f;
+		f.numerator_ = (numerator_ * other.denominator_) +
+			(other.numerator_ * denominator_);
+		f.denominator_ = (denominator_ * other.denominator_);
+		f.Reduction();
 
-		int num = numerator_ * other.denominator_ +
-			other.numerator_ * denominator_;
-		int den = denominator_ * other.denominator_;
-		Reduction(num, den);
-		return Fraction(num, den);
+		return f;
 
 	}
 	Fraction operator-(const Fraction& other)
 	{
-
-		int num = numerator_ * other.denominator_ -
+		Fraction f;
+		f.numerator_ = numerator_ * other.denominator_ -
 			other.numerator_ * denominator_;
-		int den = denominator_ * other.denominator_;
-		Reduction(num, den);
-		return Fraction(num, den);
+		f.denominator_ = denominator_ * other.denominator_;
+		f.Reduction();
+
+		return f;
 
 	}
 
 	Fraction operator*(const Fraction& other)
 	{
+		Fraction f;
+		f.numerator_ = numerator_ * other.numerator_;
+		f.denominator_ = denominator_ * other.denominator_;
+		f.Reduction();
 
-		int num = numerator_ * other.numerator_;
-		int den = denominator_ * other.denominator_;
-		Reduction(num, den);
-		return Fraction(num, den);
+		return f;
 
 	}
 
 	Fraction operator/(const Fraction& other)
 	{
+		Fraction f;
+		f.numerator_ = numerator_ * other.denominator_;
+		f.denominator_ = denominator_ * other.numerator_;
+		f.Reduction();
 
-		int num = numerator_ * other.denominator_;
-		int den = denominator_ * other.numerator_;
-		Reduction(num, den);
-		return Fraction(num, den);
+		return f;
 
 	}
 
 	Fraction operator++()
 	{
-		numerator_++;
-		denominator_++;
 
-		return *this;
+		Fraction f;
+		f.numerator_ = ++numerator_;
+		f.denominator_ = ++denominator_;
+
+		return f;
+	
+
 	}
 	Fraction operator++(int) {
 
-		Fraction temp = *this;
-		++(*this);
-		return temp;
+		Fraction f;
+		f.numerator_ = numerator_++;
+		f.denominator_ = denominator_++;
 
+		return f;
+		
 	}
 
 	Fraction operator--()
 	{
-		numerator_--;
-		denominator_--;
+		Fraction f;
+		f.numerator_ = --numerator_;
+		f.denominator_ = --denominator_;
 
-		return Fraction(numerator_, denominator_);
+		return f;
+		
 	}
 	Fraction operator--(int) {
 
-		Fraction temp = *this;
-		--(*this);
-		return temp;
+		Fraction f;
+		f.numerator_ = numerator_--;
+		f.denominator_ = denominator_--;
 
+		return f;
+		
 	}
 
 	int gcd(int num, int den) {
@@ -99,21 +116,23 @@ public:
 		}
 	}
 
-	int Reduction(int num, int den) {
-		int x = gcd(num, den);
+	void Reduction() {
+		int x = gcd(numerator_, denominator_);
 		if (x < 0) {
 			x = x * -1;
 		}
 		if (x != 0) {
 
-			num = num / x;
-			den = den / x;
+			numerator_ = numerator_ / x;
+			denominator_ = denominator_ / x;
 		}
-		return num, den;
 	}
 
+	std::string Print()
+	{
+		return std::to_string(numerator_) + "/" + std::to_string(denominator_);
+	}
 
-	void Print() { std::cout << numerator_ << "/" << denominator_ << "\n"; }
 };
 
 
@@ -125,54 +144,48 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	int num1 = 3, num2 = 4;
 	int denom1 = 4, denom2 = 5;
+	/*
+		std::cout << "Введите числитель дроби 1: ";
+		//	std::cin >> num1;
 
-	std::cout << "Введите числитель дроби 1: ";
-	//	std::cin >> num1;
+		std::cout << "Введите знаменатель дроби 1: ";
+		//	std::cin >> denom1;
 
-	std::cout << "Введите знаменатель дроби 1: ";
-	//	std::cin >> denom1;
+		std::cout << "Введите числитель дроби 2: ";
+		//	std::cin >> num2;
 
-	std::cout << "Введите числитель дроби 2: ";
-	//	std::cin >> num2;
-
-	std::cout << "Введите знаменатель дроби 2: ";
-	//	std::cin >> denom2;
-	std::cout << std::endl;
-
+		std::cout << "Введите знаменатель дроби 2: ";
+		//	std::cin >> denom2;
+		std::cout << std::endl;
+	*/
 	Fraction f1(num1, denom1);
 	Fraction f2(num2, denom2);
 
 	Fraction sum = f1 + f2;
-	sum.Print();
-	std::cout << std::endl;
+	std::cout << f1.Print() << " + " << f2.Print() << " = " << sum.Print() << std::endl;
 
 	Fraction sub = f1 - f2;
-	sub.Print();
-	std::cout << std::endl;
+	std::cout << f1.Print() << " - " << f2.Print() << " = " << sub.Print() << std::endl;
 
 	Fraction mult = f1 * f2;
-	mult.Print();
-	std::cout << std::endl;
+	std::cout << f1.Print() << " * " << f2.Print() << " = " << mult.Print() << std::endl;
 
 	Fraction div = f1 / f2;
-	div.Print();
-	std::cout << std::endl;
+	std::cout << f1.Print() << " / " << f2.Print() << " = " << div.Print() << std::endl;
 
 	Fraction incPre = ++f1 * f2;
-	incPre.Print();
-	std::cout << std::endl;
+	
+	std::cout << "++" << f1.Print() << " * " << f2.Print() << " = " << incPre.Print() << std::endl;
 
 	Fraction incPos = f1++ * f2;
-	incPos.Print();
-	std::cout << std::endl;
+	
+	std::cout << f1.Print() << "++" << " * " << f2.Print() << " = " << incPos.Print() << std::endl;
 
 	Fraction decPre = --f1 * f2;
-	decPre.Print();
-	std::cout << std::endl;
+	std::cout << "--" << f1.Print() << " * " << f2.Print() << " = " << decPre.Print() << std::endl;
 
 	Fraction decPos = f1-- * f2;
-	decPos.Print();
-	std::cout << std::endl;
+	std::cout << f1.Print() << "--" << " * " << f2.Print() << " = " << decPos.Print() << std::endl;
 
 	return 0;
 }
