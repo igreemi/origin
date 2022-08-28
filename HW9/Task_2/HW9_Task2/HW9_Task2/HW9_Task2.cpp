@@ -16,7 +16,7 @@ public:
 		if (denominator == 0) {
 			throw " Denominator cannot be 0 ";
 		}
-		
+
 	}
 
 
@@ -67,39 +67,30 @@ public:
 
 	}
 
-	Fraction operator++()
+	Fraction& operator++()
 	{
-
-		Fraction f = *this;
-		f.numerator_++;
-		f.denominator_++;
-
-		return f;
+		numerator_ += denominator_;
+		return *this;
 
 	}
 	Fraction operator++(int) {
 
 		Fraction f = *this;
 		++(*this);
-
 		return f;
 
 	}
 
-	Fraction operator--()
+	Fraction& operator--()
 	{
-		Fraction f = *this;
-		f.numerator_--;
-		f.denominator_--;
-
-		return f;
+		numerator_ -= denominator_;
+		return *this;
 
 	}
 	Fraction operator--(int) {
 
 		Fraction f = *this;
 		--(*this);
-
 		return f;
 
 	}
@@ -128,7 +119,16 @@ public:
 
 	std::string Print()
 	{
-		return std::to_string(numerator_) + "/" + std::to_string(denominator_);
+		if (numerator_ == denominator_) {
+			return std::to_string(1);
+		}
+		else
+			if (numerator_ == 0 || denominator_ == 0) {
+				return std::to_string(0);
+			}
+			else {
+				return std::to_string(numerator_) + "/" + std::to_string(denominator_);
+			}
 	}
 
 };
@@ -141,8 +141,8 @@ int main()
 
 	setlocale(LC_ALL, "Russian");
 	try {
-		int num1, num2;
-		int denom1, denom2;
+		int num1 = 2, num2 = 2;
+		int denom1 = 3, denom2 = 3;
 
 		std::cout << "Введите числитель дроби 1: ";
 		std::cin >> num1;
@@ -177,15 +177,18 @@ int main()
 
 		std::cout << "++" << f1.Print() << " * " << f2.Print() << " = " << incPre.Print() << std::endl;
 
-		Fraction incPos = f1++ * f2;
+		std::cout << "Значение дроби 1 = " << f1.Print() << std::endl;
 
-		std::cout << f1.Print() << "++" << " * " << f2.Print() << " = " << incPos.Print() << std::endl;
+		//		Fraction incPos = f1++ * f2;
+		//		std::cout << f1.Print() << "++" << " * " << f2.Print() << " = " << incPos.Print() << std::endl;
 
-		Fraction decPre = --f1 * f2;
-		std::cout << "--" << f1.Print() << " * " << f2.Print() << " = " << decPre.Print() << std::endl;
+		//		Fraction decPre = --f1 * f2;
+		//		std::cout << "--" << f1.Print() << " * " << f2.Print() << " = " << decPre.Print() << std::endl;
 
 		Fraction decPos = f1-- * f2;
 		std::cout << f1.Print() << "--" << " * " << f2.Print() << " = " << decPos.Print() << std::endl;
+		std::cout << "Значение дроби 1 = " << f1.Print() << std::endl;
+
 	}
 	catch (const std::invalid_argument& msg) {
 		std::cout << msg.what() << std::endl;
