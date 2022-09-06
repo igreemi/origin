@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(Task3)
+add_library(Task3Lib SHARED Task3_Lib/Leaver.h Task3_Lib/Leaver.cpp)
+add_executable(Task3 Task3_Client.cpp)
+target_include_directories(Task3Lib PUBLIC Task3_Lib/)
+target_link_libraries(Task3 PUBLIC Task3Lib)
