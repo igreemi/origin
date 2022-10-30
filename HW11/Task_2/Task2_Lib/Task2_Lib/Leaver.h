@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#ifdef TASK2LIBRARYDYNAMIC_EXPORTS
+#ifdef TASK2LIB_EXPORTS
 #define TASK2LIBRARY_API __declspec(dllexport)
 #else
 #define TASK2LIBRARY_API __declspec(dllimport)
