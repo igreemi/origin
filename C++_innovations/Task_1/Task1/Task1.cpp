@@ -12,14 +12,16 @@ int main()
     std::for_each(v.begin(), v.end(), [](const int n) { std::cout << n << ' '; });
     std::cout << '\n';
 
-    std::cout << "Выходные данные: ";
-    std::for_each(v.begin(), v.end(), [](int n) { 
+    std::for_each(v.begin(), v.end(), [](int &n) { 
         if(n % 2 != 0)
         {
             n *= 3;
         }
-        std::cout << n << ' '; 
         });
+
+    std::cout << "Выходные данные: ";
+    std::for_each(v.begin(), v.end(), [](const int n) { std::cout << n << ' '; });
+    std::cout << '\n';
 
     return 0;
 }
