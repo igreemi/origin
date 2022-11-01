@@ -64,7 +64,7 @@ bool Proverka(Vehicle* arr, int count, Vehicle name)
 void PrintList(Vehicle* arr, int count) {
 	int a = 1;
 	for (int i = 0; i < count; ++i) {
-		std::cout << a << ". \x1B[33m" << arr[i].GetName() << "\033[0m. " << "Âðåìÿ: " << arr[i].TravelTime() << std::endl;
+		std::cout << a << ". \x1B[33m" << arr[i].GetName() << "\033[0m. " << "Ð’Ñ€ÐµÐ¼Ñ: " << arr[i].TravelTime() << std::endl;
 		++a;
 	}
 }
@@ -89,44 +89,44 @@ void ErrorFun(int num)
 {
 	if (num == 0)
 	{
-		std::cout << "\x1B[31m Íå âåðíî! \033[0m" << std::endl;
+		std::cout << "\x1B[31m ÐÐµ Ð²ÐµÑ€Ð½Ð¾! \033[0m" << std::endl;
 		std::cout << std::endl;
 	}
 	else
 		if (num == 1)
 		{
-			std::cout << "\x1B[31m Íå âåðíûé òèï ãîíêè! \033[0m" << std::endl;
+			std::cout << "\x1B[31m ÐÐµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð³Ð¾Ð½ÐºÐ¸! \033[0m" << std::endl;
 			std::cout << std::endl;
 		}
 		else
 			if (num == 2)
 			{
-				std::cout << "\x1B[31m Íå âåðíûé òèï òðàíñïîðòà! \033[0m" << std::endl;
+				std::cout << "\x1B[31m ÐÐµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð°! \033[0m" << std::endl;
 				std::cout << std::endl;
 			}
 			else
 				if (num == 3)
 				{
-					std::cout << "\x1B[31m Äîëæíî áûòü çàðåãèñòðèðîâàííî õîòÿ áû 2 òðàíñïîðòíûõ ñðåäñòâà! \033[0m" << std::endl;
+					std::cout << "\x1B[31m Ð”Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾ Ñ…Ð¾Ñ‚Ñ Ð±Ñ‹ 2 Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð½Ñ‹Ñ… ÑÑ€ÐµÐ´ÑÑ‚Ð²Ð°! \033[0m" << std::endl;
 					std::cout << std::endl;
 				}
 }
 
 void NameDuplication(Vehicle& name)
 {
-	std::cout << "\x1B[33m" << name.GetName() << "\033[0m" << "\x1B[31m óæå çàðåãåñòðèðîâàí!\033[0m" << std::endl;
+	std::cout << "\x1B[33m" << name.GetName() << "\033[0m" << "\x1B[31m ÑƒÐ¶Ðµ Ð·Ð°Ñ€ÐµÐ³ÐµÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½!\033[0m" << std::endl;
 }
 
 void transportList()
 {
-	std::cout << "1.\x1B[36m Âåðáëþä \033[0m" << std::endl;
-	std::cout << "2.\x1B[36m Âåðáëþä-áûñòðîõîä \033[0m" << std::endl;
-	std::cout << "3.\x1B[36m Êåíòàâð \033[0m" << std::endl;
-	std::cout << "4.\x1B[36m Áîòèíêè-âåçäåõîäû \033[0m" << std::endl;
-	std::cout << "5.\x1B[36m Êîâåð-ñàìîëåò \033[0m" << std::endl;
-	std::cout << "6.\x1B[36m Îðåë \033[0m" << std::endl;
-	std::cout << "7.\x1B[36m Ìåòëà \033[0m" << std::endl;
-	std::cout << "0.\x1B[36m Çàêîí÷èòü ðåãèñòðàöèþ \033[0m" << std::endl;
+	std::cout << "1.\x1B[36m Ð’ÐµÑ€Ð±Ð»ÑŽÐ´ \033[0m" << std::endl;
+	std::cout << "2.\x1B[36m Ð’ÐµÑ€Ð±Ð»ÑŽÐ´-Ð±Ñ‹ÑÑ‚Ñ€Ð¾Ñ…Ð¾Ð´ \033[0m" << std::endl;
+	std::cout << "3.\x1B[36m ÐšÐµÐ½Ñ‚Ð°Ð²Ñ€ \033[0m" << std::endl;
+	std::cout << "4.\x1B[36m Ð‘Ð¾Ñ‚Ð¸Ð½ÐºÐ¸-Ð²ÐµÐ·Ð´ÐµÑ…Ð¾Ð´Ñ‹ \033[0m" << std::endl;
+	std::cout << "5.\x1B[36m ÐšÐ¾Ð²ÐµÑ€-ÑÐ°Ð¼Ð¾Ð»ÐµÑ‚ \033[0m" << std::endl;
+	std::cout << "6.\x1B[36m ÐžÑ€ÐµÐ» \033[0m" << std::endl;
+	std::cout << "7.\x1B[36m ÐœÐµÑ‚Ð»Ð° \033[0m" << std::endl;
+	std::cout << "0.\x1B[36m Ð—Ð°ÐºÐ¾Ð½Ñ‡Ð¸Ñ‚ÑŒ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ \033[0m" << std::endl;
 }
 
 void RaceType(int i, int tmp_i, int count, int distance, int race_type, Vehicle* arr)
@@ -134,26 +134,26 @@ void RaceType(int i, int tmp_i, int count, int distance, int race_type, Vehicle*
 	if (i > tmp_i && i != tmp_i)
 	{
 
-		std::cout << "\x1B[33m" << arr[i - 1].GetName() << "\033[0m" << "\x1B[32m óñïåøíî çàðåãèñòðèðîâàí! \033[0m" << std::endl;
+		std::cout << "\x1B[33m" << arr[i - 1].GetName() << "\033[0m" << "\x1B[32m ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½! \033[0m" << std::endl;
 	}
 	if (race_type == 1)
 	{
-		std::cout << "\x1B[36m" << "Ãîíêà äëÿ íàçåìíîãî òðàíñïîðòà!Ðàññòîÿíèå: " << "\033[0m" << distance << std::endl;
+		std::cout << "\x1B[36m" << "Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð½Ð°Ð·ÐµÐ¼Ð½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð°!Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << "\033[0m" << distance << std::endl;
 	}
 	else
 		if (race_type == 2)
 		{
-			std::cout << "\x1B[36m" << "Ãîíêà äëÿ âîçäóøíîãî òðàíñïîðòà! Ðàññòîÿíèå: " << "\033[0m" << distance << std::endl;
+			std::cout << "\x1B[36m" << "Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð²Ð¾Ð·Ð´ÑƒÑˆÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð°! Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << "\033[0m" << distance << std::endl;
 		}
 		else
 			if (race_type == 3)
 			{
-				std::cout << "\x1B[36m" << "Ãîíêà äëÿ íàçåìíîãî è âîçäóøíîãî òðàíñïîðòà! Ðàññòîÿíèå: " << "\033[0m" << distance << std::endl;
+				std::cout << "\x1B[36m" << "Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð½Ð°Ð·ÐµÐ¼Ð½Ð¾Ð³Ð¾ Ð¸ Ð²Ð¾Ð·Ð´ÑƒÑˆÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð°! Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << "\033[0m" << distance << std::endl;
 			}
 
 	if (count >= 1)
 	{
-		std::cout << "Çàðåãèñòðèðîâàííûå òðàíñïîðòíûå ñðåäñòâà: ";
+		std::cout << "Ð—Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ðµ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð½Ñ‹Ðµ ÑÑ€ÐµÐ´ÑÑ‚Ð²Ð°: ";
 
 		for (int i = 0; i < count; i++)
 		{
@@ -172,18 +172,18 @@ int main()
 	bool restart = true;
 	while (restart == true) {
 		system("cls");
-		std::cout << "\x1B[35m Äîáðî ïîæàëîâàòü â ãîíî÷íûé ñèìóëÿòîð! \033[0m" << std::endl;
+		std::cout << "\x1B[35m Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² Ð³Ð¾Ð½Ð¾Ñ‡Ð½Ñ‹Ð¹ ÑÐ¸Ð¼ÑƒÐ»ÑÑ‚Ð¾Ñ€! \033[0m" << std::endl;
 
-		std::cout << "1.\x1B[32m Ãîíêà äëÿ íàçåìíîãî òðàíñïîðòà \033[0m" << std::endl;
-		std::cout << "2.\x1B[32m Ãîíêà äëÿ âîçäóøíîãî òðàíñïîðòà \033[0m" << std::endl;
-		std::cout << "3.\x1B[32m Ãîíêà äëÿ íàçåìíîãî è âîçäóøíîãî òðàíñïîðòà \033[0m" << std::endl;
+		std::cout << "1.\x1B[32m Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð½Ð°Ð·ÐµÐ¼Ð½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð° \033[0m" << std::endl;
+		std::cout << "2.\x1B[32m Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð²Ð¾Ð·Ð´ÑƒÑˆÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð° \033[0m" << std::endl;
+		std::cout << "3.\x1B[32m Ð“Ð¾Ð½ÐºÐ° Ð´Ð»Ñ Ð½Ð°Ð·ÐµÐ¼Ð½Ð¾Ð³Ð¾ Ð¸ Ð²Ð¾Ð·Ð´ÑƒÑˆÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð° \033[0m" << std::endl;
 
 
 		int race_type = 0;
 
 		while (race_type <= 0 || race_type > 3)
 		{
-			std::cout << "Âûáåðèòå òèï ãîíêè: ";
+			std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚Ð¸Ð¿ Ð³Ð¾Ð½ÐºÐ¸: ";
 			std::cin >> race_type;
 			if (race_type > 0 && race_type <= 3) {
 				GameMod(race_type);
@@ -199,7 +199,7 @@ int main()
 
 		int distance = 0;
 		while (distance <= 0) {
-			std::cout << "\x1B[36m" << "Óêàæèòå äëèíó äèñòàíöèè(äîëæíà áûòü ïîëîæèòåëüíà): " << "\033[0m";
+			std::cout << "\x1B[36m" << "Ð£ÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ Ð´Ð¸ÑÑ‚Ð°Ð½Ñ†Ð¸Ð¸(Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°): " << "\033[0m";
 			std::cin >> distance;
 			std::cout << std::endl;
 		}
@@ -221,7 +221,7 @@ int main()
 
 		Broom broom(distance);
 
-		std::cout << "Äîëæíî áûòü çàðåãèñòðèðîâàííî õîòÿ áû 2 òðàíñïîðòíûõ ñðåäñòâà" << std::endl;
+		std::cout << "Ð”Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾ Ñ…Ð¾Ñ‚Ñ Ð±Ñ‹ 2 Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð½Ñ‹Ñ… ÑÑ€ÐµÐ´ÑÑ‚Ð²Ð°" << std::endl;
 
 		std::cout << std::endl;
 
@@ -241,27 +241,27 @@ int main()
 			int end = 1;
 
 			if (count <= 0) {
-				std::cout << "1.\x1B[32m Çàðåãèñòðèðîâàòü òðàíñïîðò \033[0m" << std::endl;
+				std::cout << "1.\x1B[32m Ð—Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚ \033[0m" << std::endl;
 			}
 			else
 			{
-				std::cout << "1.\x1B[32m Çàðåãèñòðèðîâàòü òðàíñïîðò \033[0m" << std::endl;
-				std::cout << "2.\x1B[32m Íà÷àòü ãîíêó \033[0m" << std::endl;
+				std::cout << "1.\x1B[32m Ð—Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚ \033[0m" << std::endl;
+				std::cout << "2.\x1B[32m ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð³Ð¾Ð½ÐºÑƒ \033[0m" << std::endl;
 			}
 
-			std::cout << "Âûáåðèòå äåéñòâèå: ";
+			std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 			std::cin >> reg_start;
 
 			std::cout << std::endl;
 			system("cls");
 			if (reg_start != 1 && count <= 0)
 			{
-				std::cout << "Ââåäèòå 1!" << std::endl;
+				std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1!" << std::endl;
 			}
 			else
 				if (reg_start != 1 && reg_start != 2)
 				{
-					std::cout << "Ââåäèòå 1 èëè 2!" << std::endl;
+					std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1 Ð¸Ð»Ð¸ 2!" << std::endl;
 				}
 				else
 					if (reg_start == 1)
@@ -284,7 +284,7 @@ int main()
 							transportList();
 
 							int num;
-							std::cout << "Âûáåðèòå òðàíñïîðò èëè 0 äëÿ îêîí÷àíèÿ ðåãèñòðàöèè: ";
+							std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚ Ð¸Ð»Ð¸ 0 Ð´Ð»Ñ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸: ";
 							std::cin >> num;
 							std::cout << std::endl;
 							system("cls");
@@ -470,9 +470,9 @@ int main()
 		int res = 0;
 		do
 		{
-			std::cout << "1. Ïðîâåñòè åùå îäíó ãîíêó" << std::endl;
-			std::cout << "2. Âûéòè" << std::endl;
-			std::cout << "Âûáåðèòå äåéñòâèå: ";
+			std::cout << "1. ÐŸÑ€Ð¾Ð²ÐµÑÑ‚Ð¸ ÐµÑ‰Ðµ Ð¾Ð´Ð½Ñƒ Ð³Ð¾Ð½ÐºÑƒ" << std::endl;
+			std::cout << "2. Ð’Ñ‹Ð¹Ñ‚Ð¸" << std::endl;
+			std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 			std::cin >> res;
 			if (res < 1 && res > 2)
 			{

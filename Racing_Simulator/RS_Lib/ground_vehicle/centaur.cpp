@@ -2,15 +2,15 @@
 
 Centaur::Centaur(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Кентавр"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "РљРµРЅС‚Р°РІСЂ"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->speed = 15; // - скорость транспорта
-	this->pause_distance = 8; // - Время движения до отдыха
+	this->speed = 15; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
+	this->pause_distance = 8; // - Р’СЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ РґРѕ РѕС‚РґС‹С…Р°
 
-	this->pause_count = (distance / speed) / pause_distance; // - счетчик остановок
-	this->pause_time = (pause_count * 2); // - Время отдыха
+	this->pause_count = (distance / speed) / pause_distance; // - СЃС‡РµС‚С‡РёРє РѕСЃС‚Р°РЅРѕРІРѕРє
+	this->pause_time = (pause_count * 2); // - Р’СЂРµРјСЏ РѕС‚РґС‹С…Р°
 
-	this->travel_time = (distance / speed) + pause_time; // - общее время движения
+	this->travel_time = (distance / speed) + pause_time; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 
 }

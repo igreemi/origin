@@ -21,11 +21,11 @@ int MagicCarpet::ReductionFactor()
 }
 MagicCarpet::MagicCarpet(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Ковер-самолет"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "РљРѕРІРµСЂ-СЃР°РјРѕР»РµС‚"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->speed = 10; // - скорость транспорта
+	this->speed = 10; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 
 }

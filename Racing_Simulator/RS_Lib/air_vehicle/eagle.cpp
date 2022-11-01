@@ -8,11 +8,11 @@ int Eagle::ReductionFactor()
 }
 Eagle::Eagle(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Орел"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "РћСЂРµР»"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->speed = 8; // - скорость транспорта
+	this->speed = 8; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 
 }

@@ -2,15 +2,15 @@
 
 SpeedCamel::SpeedCamel(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Верблюд-быстроход"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "Р’РµСЂР±Р»СЋРґ-Р±С‹СЃС‚СЂРѕС…РѕРґ"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->speed = 40; // - скорость транспорта
-	this->pause_distance = 10; // - Время движения до отдыха
+	this->speed = 40; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
+	this->pause_distance = 10; // - Р’СЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ РґРѕ РѕС‚РґС‹С…Р°
 
-	this->pause_count = (distance / speed) / pause_distance; // - счетчик остановок
-	this->pause_time = 5 + 6.5 + (pause_count - 2) * 8; // - Время отдыха
+	this->pause_count = (distance / speed) / pause_distance; // - СЃС‡РµС‚С‡РёРє РѕСЃС‚Р°РЅРѕРІРѕРє
+	this->pause_time = 5 + 6.5 + (pause_count - 2) * 8; // - Р’СЂРµРјСЏ РѕС‚РґС‹С…Р°
 
-	this->travel_time = (distance / speed) + pause_time; // - общее время движения
+	this->travel_time = (distance / speed) + pause_time; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 
 }

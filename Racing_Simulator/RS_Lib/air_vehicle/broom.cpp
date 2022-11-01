@@ -8,11 +8,11 @@ double Broom::ReductionFactor()
 }
 Broom::Broom(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Метла"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "РњРµС‚Р»Р°"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->speed = 20; // - скорость транспорта
+	this->speed = 20; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 
 }

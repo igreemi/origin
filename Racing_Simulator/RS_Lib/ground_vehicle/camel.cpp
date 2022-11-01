@@ -2,15 +2,15 @@
 
 Camel::Camel(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Верблюд"; // - название транспорта
+	this->distance = distance; // - СЂР°СЃСЃС‚РѕСЏРЅРёРµ
+	this->name = "Р’РµСЂР±Р»СЋРґ"; // - РЅР°Р·РІР°РЅРёРµ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
 	
-	this->speed = 10; // - скорость транспорта
-	this->pause_distance = 30; // - Время движения до отдыха
+	this->speed = 10; // - СЃРєРѕСЂРѕСЃС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚Р°
+	this->pause_distance = 30; // - Р’СЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ РґРѕ РѕС‚РґС‹С…Р°
 	
-	this->pause_count = (distance / speed) / pause_distance; // - счетчик остановок
-	this->pause_time = 5 + (pause_count - 1) * 8; // - Время отдыха
+	this->pause_count = (distance / speed) / pause_distance; // - СЃС‡РµС‚С‡РёРє РѕСЃС‚Р°РЅРѕРІРѕРє
+	this->pause_time = 5 + (pause_count - 1) * 8; // - Р’СЂРµРјСЏ РѕС‚РґС‹С…Р°
 
-	this->travel_time = (distance / speed) + pause_time; // - общее время движения
+	this->travel_time = (distance / speed) + pause_time; // - РѕР±С‰РµРµ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ
 	
 }
