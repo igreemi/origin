@@ -20,16 +20,29 @@ public:
 	smart_array& operator=(const smart_array& other)
 	{
 
-		arr = new int[other.size];
-
-		for (int i = 0; i < other.size; i++)
+		if (&other != this)
 		{
-			arr[i] = other.arr[i];
+			delete[] arr;
+
+			arr = new int[other.size];
+
+			for (int i = 0; i < other.size; i++)
+			{
+				arr[i] = other.arr[i];
+			}
+			size = other.size;
+
 		}
-		size = other.size;
 
 		return *this;
 	}
+
+	smart_array(const smart_array& other)
+
+	{
+		arr = other.arr;
+	}
+
 	void add_element(int num)
 	{
 		if (i < size)
@@ -66,6 +79,8 @@ public:
 		if (arr != nullptr)
 		{
 			delete[] arr;
+
+			std::cout << "DELETE ARR" << std::endl;
 		}
 	}
 
