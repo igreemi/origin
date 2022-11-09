@@ -40,20 +40,16 @@ public:
 	smart_array(const smart_array& other)
 
 	{
-		if (&other != this)
+		delete[] arr;
+
+		arr = new int[other.size];
+
+		for (int i = 0; i < other.size; i++)
 		{
-			delete[] arr;
-
-			arr = new int[other.size];
-
-			for (int i = 0; i < other.size; i++)
-			{
-				arr[i] = other.arr[i];
-			}
-			size = other.size;
-			i = other.i;
+			arr[i] = other.arr[i];
 		}
-
+		size = other.size;
+		i = other.i;
 
 	}
 
