@@ -40,7 +40,21 @@ public:
 	smart_array(const smart_array& other)
 
 	{
-		arr = other.arr;
+		if (&other != this)
+		{
+			delete[] arr;
+
+			arr = new int[other.size];
+
+			for (int i = 0; i < other.size; i++)
+			{
+				arr[i] = other.arr[i];
+			}
+			size = other.size;
+			i = other.i;
+		}
+
+
 	}
 
 	void add_element(int num)
@@ -79,8 +93,6 @@ public:
 		if (arr != nullptr)
 		{
 			delete[] arr;
-
-			std::cout << "DELETE ARR" << std::endl;
 		}
 	}
 
@@ -123,9 +135,12 @@ int main()
 		arr2 = arr3;
 		arr3 = arr;
 
+		smart_array arr4(arr2);
+
 		std::cout << "arr: " << arr.get_element(2) << " | "
 			<< "arr2: " << arr2.get_element(2) << " | "
-			<< "arr3: " << arr3.get_element(2) << std::endl;
+			<< "arr3: " << arr3.get_element(2) << " | "
+			<< "arr4: " << arr4.get_element(2) << std::endl;
 
 	}
 	catch (const std::exception& ex) {
