@@ -97,16 +97,17 @@ private:
 
 TEST_CASE("test list", "[list]") {
 	List list;
-	list.PushBack(10);
-	list.PushBack(20);
-	list.PushBack(30);
-	list.PushBack(40);
-	list.PushBack(50);
 
 	SECTION("Test Empty")
 	{
 		CHECK(list.Empty() == true);
 	}
+
+	list.PushBack(10);
+	list.PushBack(20);
+	list.PushBack(30);
+	list.PushBack(40);
+	list.PushBack(50);
 
 	SECTION("Test Size")
 	{

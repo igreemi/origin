@@ -120,25 +120,21 @@ TEST_CASE("test list", "[list]") {
         CHECK(list.Size() == 10);
     }
 
-    list.PopBack();
-    list.PopBack();
+    list.Clear();
 
     SECTION("Test PopBack")
     {
-        CHECK(list.Size() == 8);
+        CHECK_THROWS(list.PopBack());
     }
-
-    list.PopFront();
-    list.PopFront(); 
-    list.PopFront();
 
     SECTION("Test PopFront")
     {
-        CHECK(list.Size() == 5);
+        CHECK_THROWS(list.PopFront());
     }
-
+    
 }
 
 int main(int argc, char* argv[]) {
+   
     return Catch::Session().run(argc, argv);
 }
