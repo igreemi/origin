@@ -8,13 +8,14 @@ T my_max(T a)
 }
 
 template <typename U >
-void my_max(std::vector<U>& a)
+std::vector<U> my_max(std::vector<U>& a)
 {
+
 	for (auto& i : a)
 	{
-		i = i * i;
+		i *= i;
 	}
-
+	return a;
 }
 
 int main()
