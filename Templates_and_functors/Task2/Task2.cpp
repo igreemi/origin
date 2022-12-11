@@ -27,6 +27,13 @@ public:
 
 	table(const table& t)
 	{
+		for (int i = 0; i < cols; ++i)
+		{
+			delete[] arr[i];
+		}
+
+		delete[] arr;
+
 		cols = t.cols;
 		rows = t.rows;
 
@@ -51,6 +58,13 @@ public:
 	{
 		if (this != &t)
 		{
+			for (int i = 0; i < cols; ++i)
+			{
+				delete[] arr[i];
+			}
+
+			delete[] arr;
+
 			cols = t.cols;
 			rows = t.rows;
 
