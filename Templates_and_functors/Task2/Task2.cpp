@@ -3,15 +3,19 @@
 template<class T>
 class table
 {
+
 private:
-	int rows, cols;
+
+	int rows = 0, cols = 0;
 	T** arr = nullptr;
+
 public:
 
 	T* operator[](int i) { return arr[i]; }
 
 	table(int r, int c)
 	{
+
 		rows = r;
 		cols = c;
 
@@ -21,18 +25,13 @@ public:
 		{
 			arr[i] = new T[cols];
 		}
+
 	}
 
 	table() {}
 
 	table(const table& t)
 	{
-		for (int i = 0; i < cols; ++i)
-		{
-			delete[] arr[i];
-		}
-
-		delete[] arr;
 
 		cols = t.cols;
 		rows = t.rows;
@@ -46,7 +45,7 @@ public:
 
 		for (int i = 0; i < rows; ++i)
 		{
-			for (int j = 0; j < rows; ++j)
+			for (int j = 0; j < cols; ++j)
 			{
 				arr[i][j] = t.arr[i][j];
 			}
@@ -56,9 +55,11 @@ public:
 
 	table& operator = (table const& t)
 	{
+
 		if (this != &t)
 		{
-			for (int i = 0; i < cols; ++i)
+
+			for (int i = 0; i < rows; ++i)
 			{
 				delete[] arr[i];
 			}
@@ -77,16 +78,19 @@ public:
 
 			for (int i = 0; i < rows; ++i)
 			{
-				for (int j = 0; j < rows; ++j)
+				for (int j = 0; j < cols; ++j)
 				{
 					arr[i][j] = t.arr[i][j];
 				}
 			}
+
 		}
+
 		return *this;
 	}
 
-	~table() {
+	~table()
+	{
 		for (int i = 0; i < rows; ++i)
 		{
 			delete[] arr[i];
@@ -99,6 +103,7 @@ public:
 
 int main()
 {
+
 	auto test = table<int>(2, 3);
 
 	test[0][0] = 4;
@@ -118,4 +123,6 @@ int main()
 	table<double> myvector(2, 3);
 
 	table<double> myvector2 = myvector;
+
+	return 0;
 }
