@@ -1,29 +1,31 @@
 ﻿#include <iostream>
-#include <map>
+#include <string>
 #include <vector>
-
+#include <map>
+#include <unordered_map>
 
 int main()
 {
 
-	std::vector<char> my_vec = { 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '!' };
+	std::string str = "Hello World!!";
 
 	std::cout << "[IN] : ";
 
-	for (auto& elem : my_vec)
-	{
-		std::cout << elem;
-	}
+	std::cout << str << std::endl;
+
+	std::vector<char> my_vec(str.begin(), str.end());
 
 	std::cout << std::endl;
 
-	std::map<char, int> counter;
+	std::unordered_map<char, int> counter;
+
 	for (auto& elem : my_vec)
 	{
 		counter[elem]++;
 	}
 
 	std::multimap<int, char> reverseCount;
+
 	for (auto& elem : counter)
 	{
 		reverseCount.emplace(elem.second, elem.first);
