@@ -13,6 +13,7 @@ void sum_vec(size_t start, size_t end, const ivec v1, const ivec v2, ivec res)
 	}
 
 }
+
 void parallel_sum_vec2(const ivec& v1, const ivec& v2, ivec res)
 {
 	
