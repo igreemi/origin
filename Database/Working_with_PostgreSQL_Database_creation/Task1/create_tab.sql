@@ -18,7 +18,7 @@ create table if not exists tracks(
 id serial primary key,
 album_id integer not null references album(id),
 track varchar(120) not null,
-time_t varchar not null
+time_t varchar(5) not null
 );
 
 --Сборник имеет название и год выпуска. 
