@@ -1,78 +1,152 @@
 #include <iostream>
-//#include <pqxx/pqxx>
+#include <memory>
 #include <Windows.h>
 #include "client_base.h"
 
 int main()
 {
 	SetConsoleOutputCP(CP_UTF8);
-//	  setlocale(LC_ALL, "Russian");
+	//	setlocale(LC_ALL, "Russian");
 
 	try {
-		client_base cb;
 
-		std::string client_id;
-		std::string first_name, last_name, email;
+		std::string host = "localhost";
+		std::string port = "5432";
+		std::string nameDb = "test";
+		std::string user = "postgres";
+		std::string pass = "123";
 
-		pqxx::connection c(
+		std::unique_ptr<client_base> cb(new client_base());
 
-			"host = localhost "
-			"port = 5432 "
-			"dbname = test "
-			"user = postgres "
-			"password = 123 "
+		cb->connectDB(host, port, nameDb, user, pass);
 
-		);
+		cb->createTables();
 
-		pqxx::work tx{ c };
+		char menu = '0';
 
-//			cb.createTables(tx);
+		while (menu != '7')
+		{
+			std::string first_name, last_name, email, phone, search;
 
+			int id;
 
-		c.prepare("insert_client", "INSERT INTO Clients(first_name, last_name, email) VALUES($1, $2, $3)");
-		c.prepare("insert_phone", "INSERT INTO Phones(id_client, phone) VALUES($1, $2)");
-//			c.prepare("update_client", "UPDATE Clients SET first_name = '" + first_name + "', last_name = '" + last_name + "', email = '" + email + "' WHERE id = '" + client_id + "'");
-//			cb.addNewClient(tx, "Bobik", "Kamushkin", "bbb@bbb.bb");
+			menu = 0;
 
-//			cb.addPhoneToClient(tx, cb.getClientIdByEmail(tx, "bbb@bbb.bb"), "+78880004444");
+			std::cout << "----------------MENU----------------" << std::endl;
+			std::cout << " 1) Create a new client " << std::endl;
+			std::cout << " 2) Add client phone " << std::endl;
+			std::cout << " 3) Update customer details " << std::endl;
+			std::cout << " 4) Delete customer phone " << std::endl;
+			std::cout << " 5) Delete client " << std::endl;
+			std::cout << " 6) Client Search " << std::endl;
+			std::cout << " 7) Exit " << std::endl;
 
-//			std::cout << "Enter ID Client: ";
-//			std::cin >> client_id;
-//			std::cout << "First Name: ";
-//			std::cin >> first_name;
-//			std::cout << "Last Name: ";
-//			std::cin >> last_name;
-//			std::cout << "email: ";
-//			std::cin >> email;
+			std::cout << " Enter menu number: ";
 
-//			c.prepare("update_client", "UPDATE Clients SET first_name = $1 WHERE id = $2");
+			std::cin >> menu;
 
-//			cb.updateClient(tx, first_name, client_id);
+			if (menu > '0' && menu < '8')
+			{
+				switch (menu)
+				{
+				case '1':
 
-//			c.prepare("delete_phone", "DELETE FROM Phones WHERE id_client = $1 AND phone = $2");
+					std::cout << "Enter First Name: ";
+					std::cin >> first_name;
 
-//			cb.deletePhoneToClient(tx, cb.getClientIdByEmail(tx, "aaa@aaa.aa"), "+70001112233");
+					std::cout << "Enter Last Name: ";
+					std::cin >> last_name;
 
-//			c.prepare("delete_phones_client", "DELETE FROM Phones WHERE id_client = $1");
-//			c.prepare("delete_client", "DELETE FROM Clients WHERE id = $1");
+					std::cout << "Enter Email: ";
+					std::cin >> email;
 
-//			cb.deleteClient(tx, cb.getClientIdByEmail(tx, "aaa@aaa.aa"));
+					cb->addNewClient(first_name, last_name, email);
 
-		std::string search;
-		std::cout << "Enter First name or Last name or Email or Phone: ";
-		std::cin >> search;
+					break;
+				case '2':
 
-		c.prepare("search_client",
-			"SELECT first_name, last_name, email, p.phone FROM clients c "
-			"LEFT JOIN phones p  ON c.id = p.id_client "
-			"WHERE first_name = $1 "
-			"OR last_name = $1 "
-			"OR email = $1 "
-			"OR p.phone = $1");
+					std::cout << " Enter customer email: ";
+					std::cin >> email;
 
-		cb.searchClient(tx, search);
+					id = cb->getClientIdByEmail(email);
 
+					if (id > 0)
+					{
+						std::cout << " Enter a new customer number: ";
+						std::cin >> phone;
 
+						cb->addPhoneToClient(id, phone);
+					}
+					break;
+
+				case '3':
+
+					std::cout << " Enter customer email: ";
+					std::cin >> email;
+
+					id = cb->getClientIdByEmail(email);
+
+					if (id > 0)
+					{
+						std::cout << "Enter new first name: ";
+						std::cin >> first_name;
+
+						std::cout << "Enter new last name: ";
+						std::cin >> last_name;
+
+						std::cout << "Enter new email: ";
+						std::cin >> email;
+
+						cb->updateClient(id, first_name, last_name, email);
+					}
+					break;
+
+				case '4':
+
+					std::cout << " Enter customer email: ";
+					std::cin >> email;
+
+					id = cb->getClientIdByEmail(email);
+
+					if (id > 0)
+					{
+						std::cout << " Delete customer phone: ";
+						std::cin >> phone;
+
+						cb->deletePhoneToClient(id, phone);
+					}
+					break;
+
+				case '5':
+
+					std::cout << " Enter customer email: ";
+					std::cin >> email;
+
+					id = cb->getClientIdByEmail(email);
+
+					if (id > 0)
+					{
+						cb->deleteClient(id);
+					}
+					break;
+
+				case '6':
+
+					std::cout << " Enter the client's first name, last name, email or phone: " << std::endl;
+					std::cin >> search;
+
+					cb->searchClient(search);
+
+					break;
+
+				default:
+
+					break;
+				}
+				system("pause");
+			}
+			system("cls");
+		}
 	}
 	catch (pqxx::sql_error e)
 	{
