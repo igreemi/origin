@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_session.hpp>
+#include "catch2/catch_all.hpp"
 
 struct ListNode
 {
@@ -126,12 +127,15 @@ TEST_CASE("test list", "[list]") {
     {
         CHECK_THROWS(list.PopBack());
     }
-
+    list.PushFront(10);
+    list.PushFront(20);
+    list.PushFront(30);
     SECTION("Test PopFront")
     {
         CHECK_THROWS(list.PopFront());
+        CHECK_THROWS_WITH(list.PopFront(), "Test PopFront");
     }
-    
+
 }
 
 int main(int argc, char* argv[]) {

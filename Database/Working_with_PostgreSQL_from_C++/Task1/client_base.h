@@ -7,9 +7,17 @@ class client_base
 {
 private:
 
-	pqxx::connection* connect_db;
+	pqxx::connection* connect_db = nullptr;
 
 public:
+
+	client_base();
+
+	~client_base();
+
+	client_base(const client_base&) = delete;
+
+	void operator=(const client_base&) = delete;
 
 	void connectDB(std::string host, std::string port, std::string name, std::string user, std::string pass);
 
