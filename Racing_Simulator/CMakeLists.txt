@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22.0)
 
 project(Racing_Simulator)
 
+
+
 set(SOURCE_LIB "RS_Lib/vehicle.cpp" "RS_Lib/vehicle.h" 
 "RS_Lib/ground_vehicle.cpp" "RS_Lib/ground_vehicle.h" 
 "RS_Lib/air_vehicle.cpp" "RS_Lib/air_vehicle.h" 

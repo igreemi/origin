@@ -1,16 +1,16 @@
-#include "centaur.h"
+﻿#include "centaur.h"
 
 Centaur::Centaur(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Кентавр"; // - название транспорта
+	this->distance = distance;
+	this->name = "Кентавр";
 
-	this->speed = 15; // - скорость транспорта
-	this->pause_distance = 8; // - Время движения до отдыха
+	this->speed = 15;
+	this->pause_distance = 8;
 
-	this->pause_count = (distance / speed) / pause_distance; // - счетчик остановок
-	this->pause_time = (pause_count * 2); // - Время отдыха
+	this->pause_count = static_cast<int>((distance / speed) / pause_distance);
+	this->pause_time = (pause_count * 2);
 
-	this->travel_time = (distance / speed) + pause_time; // - общее время движения
+	this->travel_time = (distance / speed) + pause_time;
 
 }

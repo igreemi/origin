@@ -1,18 +1,18 @@
-#include "broom.h"
+﻿#include "broom.h"
 
 double Broom::ReductionFactor()
 {
-	int redFact = distance / 1000;
-	return (distance * redFact / 100);
+	int redFact = (distance / 1000);
+	return static_cast<double>(distance * redFact / 100);
 
 }
 Broom::Broom(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Метла"; // - название транспорта
+	this->distance = distance;
+	this->name = "Метла";
 
-	this->speed = 20; // - скорость транспорта
+	this->speed = 20;
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed;
 
 }

@@ -1,6 +1,6 @@
-#include "magic_carpet.h"
+﻿#include "magic_carpet.h"
 
-int MagicCarpet::ReductionFactor()
+double MagicCarpet::ReductionFactor()
 {
 	if (distance < 1000)
 	{
@@ -8,24 +8,25 @@ int MagicCarpet::ReductionFactor()
 	}
 	else if (distance < 5000)
 	{
-		return distance * 0.03;
+		return (distance * 0.03);
 	}
 	else if (distance < 10000)
 	{
-		return distance * 0.1;
+		return (distance * 0.1);
 	}
 	else if (distance >= 10000)
 	{
-		return distance * 0.05;
+		return (distance * 0.05);
 	}
+	return 0;
 }
 MagicCarpet::MagicCarpet(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Ковер-самолет"; // - название транспорта
+	this->distance = distance;
+	this->name = "Ковер-самолет";
 
-	this->speed = 10; // - скорость транспорта
+	this->speed = 10;
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed;
 
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include "RS_Lib/vehicle.h"
 
@@ -12,8 +12,6 @@
 #include "RS_Lib/air_vehicle/magic_carpet.h"
 #include "RS_Lib/air_vehicle/eagle.h"
 #include "RS_Lib/air_vehicle/broom.h"
-
-
 
 void quick_sort(Vehicle* arr, int size) {
 
@@ -83,6 +81,7 @@ int GameMod(int t)
 	{
 		return 3;
 	}
+	return 0;
 }
 
 void ErrorFun(int num)
@@ -169,6 +168,7 @@ void RaceType(int i, int tmp_i, int count, int distance, int race_type, Vehicle*
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+
 	bool restart = true;
 	while (restart == true) {
 		system("cls");
@@ -204,7 +204,7 @@ int main()
 			std::cout << std::endl;
 		}
 		system("cls");
-		//-----------------GROUND---------------------
+
 		Camel camel(distance);
 
 		SpeedCamel speed_camel(distance);
@@ -212,8 +212,6 @@ int main()
 		Centaur centaur(distance);
 
 		AllTerrainBoots all_terrain_boots(distance);
-
-		//-----------------AIR------------------------
 
 		MagicCarpet magic_carpet(distance);
 
@@ -489,7 +487,7 @@ int main()
 						restart = false;
 					}
 		} while (res != 1 && res != 2);
-	
+
 		system("cls");
 	}
 

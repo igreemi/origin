@@ -1,18 +1,18 @@
-#include "eagle.h"
+﻿#include "eagle.h"
 
-int Eagle::ReductionFactor()
+double Eagle::ReductionFactor()
 {
 
-		return distance * 0.06;
+	return (distance * 0.06);
 
 }
 Eagle::Eagle(int distance)
 {
-	this->distance = distance; // - расстояние
-	this->name = "Орел"; // - название транспорта
+	this->distance = distance;
+	this->name = "Орел";
 
-	this->speed = 8; // - скорость транспорта
+	this->speed = 8;
 
-	this->travel_time = (distance - ReductionFactor()) / speed; // - общее время движения
+	this->travel_time = (distance - ReductionFactor()) / speed;
 
 }

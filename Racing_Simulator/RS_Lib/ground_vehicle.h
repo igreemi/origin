@@ -1,15 +1,15 @@
-#pragma once
+п»ї#pragma once
 
 #include "vehicle.h"
 
-class Ground_Vehicle: public Vehicle
+class Ground_Vehicle : public Vehicle
 {
-	protected:
+protected:
 
-		double pause_time; // - Время отдыха
-		double pause_distance; // - Время движения до отдыха
-		int pause_count; // - счетчик остановок
+	double pause_time = 0.0;
+	double pause_distance = 0.0;
+	int pause_count = 0;
 
 public:
-		Ground_Vehicle();
+	Ground_Vehicle();
 };
