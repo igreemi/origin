@@ -4,6 +4,6 @@
 	public Triangle
 {
 public:
-	TASK4LIBEXPORTS_API	Isosceles_Triangle(int c, int A, int B, int C);
+	TASK4LIB_EXPORTS_API	Isosceles_Triangle(int c, int A, int B, int C);
 };
 

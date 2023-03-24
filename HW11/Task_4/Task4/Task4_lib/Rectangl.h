@@ -3,6 +3,6 @@
  class Rectangl : public Quadrilateral
 {
 public:
-	TASK4LIBEXPORTS_API	Rectangl(int a, int b, int c, int d);
+	TASK4LIB_EXPORTS_API	Rectangl(int a, int b, int c, int d);
 };
 

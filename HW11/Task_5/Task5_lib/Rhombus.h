@@ -2,6 +2,6 @@
 #include "Quadrilateral.h"
  class Rhombus : public Quadrilateral {
 public:
-	TASK4LIBEXPORTS_API	Rhombus(int a, int A, int B);
+		Rhombus(int a, int A, int B);
 };
 

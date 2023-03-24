@@ -6,12 +6,13 @@
 #else
 #define TASK2LIBRARY_API __declspec(dllimport)
 #endif
+
 namespace Task2
 {
-	class Leaver
+	class TASK2LIBRARY_API Leaver
 	{
 	public:
-		TASK2LIBRARY_API std::string leave(std::string name);
+		 std::string leave(std::string name);
 	};
 }
 

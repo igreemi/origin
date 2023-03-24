@@ -4,6 +4,6 @@
 	public Triangle
 {
 public:
-	TASK4LIBEXPORTS_API	Equilateral_Triangle(int a);
+	TASK4LIB_EXPORTS_API	Equilateral_Triangle(int a);
 };
 

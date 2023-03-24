@@ -1,16 +1,16 @@
 #pragma once
 #include <string>
 
-#ifdef TASK3LIBRARYDYNAMIC_EXPORTS
-#define TASK3LIBRARY_API __declspec(dllexport)
+#ifdef Task3Lib_EXPORTS
+#define Task3Lib_API __declspec(dllexport)
 #else
-#define TASK3LIBRARY_API __declspec(dllimport)
+#define Task3Lib_API __declspec(dllimport)
 #endif
 namespace Task3
 {
-	class Leaver
+	class Task3Lib_API Leaver
 	{
 	public:
-		TASK3LIBRARY_API std::string leave(std::string name);
+		std::string leave(std::string name);
 	};
 }

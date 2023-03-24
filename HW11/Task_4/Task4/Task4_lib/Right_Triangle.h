@@ -5,7 +5,7 @@
 {
 
 public:
-	TASK4LIBEXPORTS_API	Right_Triangle(int a, int b, int c, int A, int B);
+	TASK4LIB_EXPORTS_API	Right_Triangle(int a, int b, int c, int A, int B);
 };
 
 

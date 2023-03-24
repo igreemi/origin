@@ -2,6 +2,6 @@
 #include "Rectangl.h"
  class Square : public Rectangl {
 public:
-	TASK4LIBEXPORTS_API	Square(int a, int b, int c, int d);
+	TASK4LIB_EXPORTS_API	Square(int a, int b, int c, int d);
 };
 
