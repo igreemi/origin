@@ -29,15 +29,14 @@ void scoped_lockSwap(Data& dt1, Data& dt2)
 void unique_lockSwap(Data& dt1, Data& dt2)
 {
 
-	std::unique_lock<std::mutex> m1(dt1.getMtx());
-	std::unique_lock<std::mutex> m2(dt2.getMtx());
+	std::unique_lock<std::mutex> m1(dt1.getMtx(), std::defer_lock);
+	std::unique_lock<std::mutex> m2(dt2.getMtx(), std::defer_lock);
 
-	int temp = dt1.getDt();
+	std::lock(m1, m2);
+
+	auto temp = dt1.getDt();
 	dt1.setDt(dt2.getDt());
 	dt2.setDt(temp);
-
-	m1.unlock();
-	m2.unlock();
 
 }
 

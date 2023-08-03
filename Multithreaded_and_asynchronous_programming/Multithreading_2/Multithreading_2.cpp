@@ -5,7 +5,7 @@
 
 typedef std::vector <int> ivec;
 
-void sum_vec(size_t start, size_t end, const ivec v1, const ivec v2, ivec res)
+void sum_vec(size_t start, size_t end, const ivec& v1, const ivec& v2, ivec& res)
 {
 
 	for (int i = start; i < end; i++) {
@@ -54,19 +54,19 @@ void parallel_sum_vec(const ivec& v1, const ivec& v2, ivec& res, int thr_v)
 
 		if (i == 0)
 		{
-			thr.push_back(std::thread(sum_vec, i, v_size, cref(v1), cref(v2), ref(res)));
+			thr.push_back(std::thread(sum_vec, i, v_size, std::ref(v1), std::ref(v2), std::ref(res)));
 		}
 		else if (i == 1)
 		{
-			thr.push_back(std::thread(sum_vec, v_size + i, v_size * (i + 1), cref(v1), cref(v2), ref(res)));
+			thr.push_back(std::thread(sum_vec, v_size + i, v_size * (i + 1), std::ref(v1), std::ref(v2), std::ref(res)));
 		}
 		else if (i == (thr_v - 1))
 		{
-			thr.push_back(std::thread(sum_vec, v_size * i + 1, v1.size(), cref(v1), cref(v2), ref(res)));
+			thr.push_back(std::thread(sum_vec, v_size * i + 1, v1.size(), std::ref(v1), std::ref(v2), std::ref(res)));
 		}
 		else if (i > 1)
 		{
-			thr.push_back(std::thread(sum_vec, v_size * i + 1, v_size * (i + 1), cref(v1), cref(v2), ref(res)));
+			thr.push_back(std::thread(sum_vec, v_size * i + 1, v_size * (i + 1), std::ref(v1), std::ref(v2), std::ref(res)));
 		}
 
 	}
@@ -216,7 +216,7 @@ int main()
 
 		auto start = std::chrono::steady_clock::now();
 
-		sum_vec((size_t)0, n, v1, v2, res);
+		sum_vec((size_t)0, n, std::ref(v1), std::ref(v2), std::ref(res));
 
 		auto end = std::chrono::steady_clock::now();
 
@@ -243,7 +243,7 @@ int main()
 
 		auto start2 = std::chrono::steady_clock::now();
 
-		parallel_sum_vec(v1, v2, res, 2);
+		parallel_sum_vec(std::ref(v1), std::ref(v2), std::ref(res), 2);
 
 		auto end2 = std::chrono::steady_clock::now();
 
@@ -270,7 +270,7 @@ int main()
 
 		auto start4 = std::chrono::steady_clock::now();
 
-		parallel_sum_vec(v1, v2, res, 4);
+		parallel_sum_vec(std::ref(v1), std::ref(v2), std::ref(res), 4);
 
 		auto end4 = std::chrono::steady_clock::now();
 
@@ -297,7 +297,7 @@ int main()
 
 		auto start8 = std::chrono::steady_clock::now();
 
-		parallel_sum_vec(v1, v2, res, 8);
+		parallel_sum_vec(std::ref(v1), std::ref(v2), std::ref(res), 8);
 
 		auto end8 = std::chrono::steady_clock::now();
 
@@ -324,7 +324,7 @@ int main()
 
 		auto start16 = std::chrono::steady_clock::now();
 
-		parallel_sum_vec(v1, v2, res, 16);
+		parallel_sum_vec(std::ref(v1), std::ref(v2), std::ref(res), 16);
 
 		auto end16 = std::chrono::steady_clock::now();
 
