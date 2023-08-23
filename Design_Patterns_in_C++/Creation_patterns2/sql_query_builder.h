@@ -76,6 +76,7 @@ public:
 		if (!select_query.where.empty()) {
 			query += " WHERE " + select_query.where;
 		}
+
 		return query + ";";
 	}
 };
