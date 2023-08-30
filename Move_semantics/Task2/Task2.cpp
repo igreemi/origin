@@ -13,11 +13,11 @@ public:
 
 	big_integer(const std::string& val) : value(val) {}
 
-	big_integer(std::string&& val) : value(val) {}
+	big_integer(std::string&& val) : value(std::move(val)) {}
 
 	big_integer(const big_integer& other) : value(other.value) {}
 
-	big_integer(big_integer&& other) noexcept : value(other.value) {}
+	big_integer(big_integer&& other) noexcept : value(std::move(other.value)) {}
 
 	big_integer& operator=(const big_integer& other)
 	{
@@ -31,7 +31,7 @@ public:
 	big_integer& operator=(big_integer&& other) noexcept
 	{
 		if (this != &other) {
-			value = other.value;
+			value = std::move(other.value);
 		}
 		return *this;
 	}
