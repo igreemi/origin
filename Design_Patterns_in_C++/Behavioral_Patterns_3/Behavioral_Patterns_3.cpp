@@ -33,7 +33,6 @@ protected:
     LogHandler* m_nextHandler;
 
 public:
-    virtual ~LogHandler(){}
 
     virtual void handleLog(const LogMessage& logMsg) = 0;
 
