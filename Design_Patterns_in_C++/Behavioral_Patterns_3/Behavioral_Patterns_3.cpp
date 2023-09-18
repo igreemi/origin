@@ -49,7 +49,7 @@ public:
     {
         if (logMsg.type() == Type::FatalError)
         {
-//            std::cout << "FatalError " << std::endl;
+            std::cout << "FatalError " << std::endl;
             throw std::runtime_error(logMsg.message());
         }
         else
@@ -75,7 +75,7 @@ public:
     {
         if (logMsg.type() == Type::Error)
         {
-//            std::cout << "Error " << std::endl;
+            std::cout << "Error " << std::endl;
             logFile << logMsg.message() << std::endl;
             logFile.close();
         }
@@ -95,8 +95,8 @@ public:
     {
         if (logMsg.type() == Type::Warning)
         {
-//            std::cout << "Warning " << std::endl;
-            std::cout << logMsg.message() << std::endl;
+            std::cout << "Warning " << std::endl;
+//            std::cout << logMsg.message() << std::endl;
         }
         else
         {
@@ -113,8 +113,8 @@ public:
     {
         if (logMsg.type() == Type::Unknown) 
         {
-//            std::cout << "Unknow " << std::endl;
-            throw std::runtime_error("Unhandled log message");
+            std::cout << "Unknow " << std::endl;
+ //           throw std::runtime_error("Unhandled log message");
         }
         else
         {
